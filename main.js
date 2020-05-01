@@ -5,4 +5,3 @@
 console.log("Main js")
 
 game = new Game()
-game.createBoard()
