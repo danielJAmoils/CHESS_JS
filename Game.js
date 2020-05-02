@@ -4,19 +4,19 @@ class Game{
     }
     createPeice(type,color,symbol,x,y){
         const peice = new type(color,symbol,x,y)
-        return peice
+        this.addPeiceToBoard(peice)
     }
-    addPeiceToBoard(peice,x,y){
-        const cell = this.board.cells[x][y]
+    addPeiceToBoard(peice){
+        const cell = this.board.cells[peice.x-1][peice.y-1]
         cell.status = statusEnum.Full
         cell.peice = peice
     }
     startGame(){
-        for(let i =0;i<8;i++){
-            this.addPeiceToBoard(this.createPeice(Pawn,"black",2,i),2,i)
+        for(let i =1;i<=8;i++){
+            this.createPeice(Pawn,"black",2,i)
         }
-        for(let i =0;i<8;i++){
-            this.addPeiceToBoard(this.createPeice(Pawn,"white",7,i),6,i)
+        for(let i =1;i<=8;i++){
+            this.createPeice(Pawn,"white",7,i)
         }
     }
 }

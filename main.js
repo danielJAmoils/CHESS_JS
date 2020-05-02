@@ -4,6 +4,6 @@
 
 console.log("Main js")
 
-game = new Game()
+const game = new Game()
 game.startGame()
 console.log(game.board.cells)
