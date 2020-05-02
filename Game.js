@@ -7,11 +7,16 @@ class Game{
         return peice
     }
     addPeiceToBoard(peice,x,y){
-        const cell = this.board.cells[x-1][y-1]
+        const cell = this.board.cells[x][y]
         cell.status = statusEnum.Full
         cell.peice = peice
     }
     startGame(){
-        this.addPeiceToBoard(this.createPeice(Pawn,"black",5,4),5,4)
+        for(let i =0;i<8;i++){
+            this.addPeiceToBoard(this.createPeice(Pawn,"black",2,i),2,i)
+        }
+        for(let i =0;i<8;i++){
+            this.addPeiceToBoard(this.createPeice(Pawn,"white",7,i),6,i)
+        }
     }
 }

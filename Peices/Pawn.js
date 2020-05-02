@@ -11,7 +11,7 @@ class Pawn extends Peice{
         }
         const table = document.getElementById("board"),
         row = table.getElementsByTagName("td"),
-        location = ((8*(x-1))+y)-1,
+        location = ((8*(x-1))+y),
         cell = row.item(location)
         cell.innerText = this.symbol
         console.log(cell)
