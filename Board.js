@@ -1,6 +1,8 @@
 class Board{
     constructor(x,y){
+        this.cells = [[],[],[],[],[],[],[],[]]
         this.createBoard(x,y)
+        console.log(this.cells)
     }
     createBoard(x,y){
         //function for creating chess board layout
@@ -13,9 +15,13 @@ class Board{
                 var td = document.createElement('td');
                 if (i%2 == j%2) {
                     td.className = "white";
+                    const cell = new Cell(statusEnum.Empty)
+                    this.cells[i-1][j-1] = cell
                     //white tile
                 } else {
                     td.className = "black";
+                    const cell = new Cell(statusEnum.Empty)
+                    this.cells[i-1][j-1] = cell
                     //black tile
                 }
                 tr.appendChild(td);
