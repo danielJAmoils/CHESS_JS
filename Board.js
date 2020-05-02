@@ -7,6 +7,7 @@ class Board{
     createBoard(x,y){
         //function for creating chess board layout
         var table = document.createElement("table");
+        table.id = "board"
         for (var i = 1; i < x+1; i++) {
             //board rows
             var tr = document.createElement('tr');

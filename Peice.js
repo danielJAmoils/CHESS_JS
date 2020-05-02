@@ -1,7 +1,6 @@
 class Peice{
-    constructor(type){
-        this.type = type
-
+    constructor(color){
+        this.color = color
     }
     isCaptured() {
         

@@ -5,3 +5,5 @@
 console.log("Main js")
 
 game = new Game()
+game.startGame()
+console.log(game.board.cells[4][3])
