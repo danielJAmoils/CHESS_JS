@@ -6,6 +6,6 @@ let statusEnum = {
 class Cell{
     constructor(status){
         this.status = status
-        this.peice
+        this.piece
     }
 }

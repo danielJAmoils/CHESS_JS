@@ -1,4 +1,4 @@
-class Peice{
+class Piece{
     constructor(color,x,y,whiteSymbol,blackSymbol){
         this.color = color
         this.x = x
@@ -15,7 +15,7 @@ class Peice{
     capturing(target){
 
     }
-    drawPeice(){
+    drawPiece(){
         const table = document.getElementById("board"),
         row = table.getElementsByTagName("td"),
         location = ((8*(this.x-1))+this.y-1),
