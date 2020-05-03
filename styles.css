@@ -7,11 +7,11 @@ text-align: center;
 }
 
 .black{
-    background-color: black;
+    background-color: rgb(19, 8, 8);
 }
 
 .white{
-    background-color: white;
+    background-color: rgb(221, 215, 215);
 }
 
 table {
