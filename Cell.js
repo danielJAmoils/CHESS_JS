@@ -4,8 +4,9 @@ let statusEnum = {
 }
 
 class Cell{
-    constructor(status){
+    constructor(status,clicked){
         this.status = status
         this.piece
+        this.clicked = clicked
     }
 }

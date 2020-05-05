@@ -12,7 +12,7 @@ class Game{
         cell.piece = piece
     }
     startGame(){
-        //peice starting positions
+        //piece starting positions
         for(let i =1;i<=8;i++){
             this.createPiece(Pawn,"white",7,i)
             //white pawns

@@ -1,9 +1,10 @@
 td{
 border:1px solid grey;
-width:35px;
-height:35px;
+width:50px;
+height:50px;
 color: grey;
 text-align: center;
+font-size: xx-large;
 }
 
 .black{
@@ -12,6 +13,9 @@ text-align: center;
 
 .white{
     background-color: rgb(221, 215, 215);
+}
+td:active{
+    background-color: blue;
 }
 
 table {
