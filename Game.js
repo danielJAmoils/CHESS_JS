@@ -2,59 +2,69 @@ class Game{
     constructor(){
         this.board = new Board(8,8)//can change board size
     }
-    createPiece(type,color,symbol,x,y){
-        const piece = new type(color,symbol,x,y)
+    createPiece(type,color,x,y){
+        const piece = new type(color,x,y)
         this.addPieceToBoard(piece)
     }
     addPieceToBoard(piece){
-        const cell = this.board.cells[piece.x-1][piece.y-1]
+        const cell = this.board.cells[piece.y-1][piece.x-1]
         cell.status = statusEnum.Full
         cell.piece = piece
+    }
+    movePiece(td,targetX,targetY,currentX,currentY,){
+        //all attributes recived start at 1
+        //called when moving a piece
+        const targetCell = this.board.cells[targetY-1][targetX-1],
+        currentCell = this.board.cells[currentY-1][currentX-1]
+        console.log(currentCell,targetCell)
+        console.log(currentCell.piece)
+
+
     }
     startGame(){
         //piece starting positions
         for(let i =1;i<=8;i++){
-            this.createPiece(Pawn,"white",7,i)
+            this.createPiece(Pawn,"white",i,7)
             //white pawns
         }
         for(let i =2;i<=7;i+=5){
-            this.createPiece(Knight,"white",8,i)
+            this.createPiece(Knight,"white",i,8)
             //white knight
         }
         for(let i =3;i<=6;i+=3){
-            this.createPiece(Bishop,"white",8,i)
+            this.createPiece(Bishop,"white",i,8)
             //white bishop
         }
         for(let i =1;i<=8;i+=7){
-            this.createPiece(Rook,"white",8,i)
+            this.createPiece(Rook,"white",i,8)
             //white rook
         }
-        this.createPiece(Queen,"white",8,4)
+        this.createPiece(Queen,"white",4,8)
         //white queen
-        this.createPiece(King,"white",8,5)
+        this.createPiece(King,"white",5,8)
         //white king
 
         /**************************************/
 
         for(let i =1;i<=8;i++){
-            this.createPiece(Pawn,"black",2,i)
+            this.createPiece(Pawn,"black",i,2)
             //black pawns
         }
         for(let i =2;i<=7;i+=5){
-            this.createPiece(Knight,"black",1,i)
+            this.createPiece(Knight,"black",i,1)
             //black knight
         }
         for(let i =3;i<=6;i+=3){
-            this.createPiece(Bishop,"black",1,i)
+            this.createPiece(Bishop,"black",i,1)
             //black bishop
         }
         for(let i =1;i<=8;i+=7){
-            this.createPiece(Rook,"black",1,i)
+            this.createPiece(Rook,"black",i,1)
             //black rook
         }
-        this.createPiece(Queen,"black",1,4)
+        this.createPiece(Queen,"black",4,1)
         //black queen
-        this.createPiece(King,"black",1,5)
+        this.createPiece(King,"black",5,1)
         //black king
     }
 }
