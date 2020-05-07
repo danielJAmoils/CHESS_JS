@@ -28,6 +28,12 @@ function cellClicked(cell){
         //if no piece in cell and piece has already been clicked,move piece
         //outside variables start at one
         game.movePiece(cell,cell.getAttribute("data-x"),cell.getAttribute("data-y"),outsideX,outsideY)
+    }else if(cell.innerHTML != "" && pieceClicked == true){
+        //if you click one piece and then another
+        const cell1 = game.board.cells[outsideY-1][outsideX-1],
+        cell2 = game.board.cells[parseInt(cell.getAttribute("data-y"))-1][parseInt(cell.getAttribute("data-x"))-1]
+
+        game.checkCapture(cell1.piece,cell2.piece)
     }else if(cell.innerHTML == ""){
         // //if no piece in cell
     }else{

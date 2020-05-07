@@ -35,6 +35,14 @@ class Game{
         cell = tableItems.item(location)
         cell.innerText = ""
     }
+    checkCapture(piece1,piece2){
+        if(piece1.color == piece2.color){
+            //if you try to move piece to same color piece it will not move
+        }else{
+            //when capturing
+            piece1.capture(piece2)
+        }
+    }
     startGame(){
         //piece starting positions
         for(let i =1;i<=8;i++){
