@@ -17,9 +17,9 @@ class Piece{
     }
     drawPiece(){
         const table = document.getElementById("board"),
-        row = table.getElementsByTagName("td"),
+        tableItems = table.getElementsByTagName("td"),
         location = ((8*(this.y-1))+this.x-1),
-        cell = row.item(location)
+        cell = tableItems.item(location)
         cell.innerText = this.symbol
     }
 }

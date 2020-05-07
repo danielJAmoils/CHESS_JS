@@ -16,10 +16,24 @@ class Game{
         //called when moving a piece
         const targetCell = this.board.cells[targetY-1][targetX-1],
         currentCell = this.board.cells[currentY-1][currentX-1]
-        console.log(currentCell,targetCell)
-        console.log(currentCell.piece)
+        targetCell.piece = currentCell.piece
+        currentCell.piece = null
+        currentCell.clicked = false
+        targetCell.piece.x = parseInt(targetX)
+        targetCell.piece.y = parseInt(targetY)
+        targetCell.status = statusEnum.Full
+        currentCell.status = statusEnum.Empty
+        targetCell.piece.drawPiece()
+        this.erasePiece(currentX,currentY)
 
 
+    }
+    erasePiece(x,y){
+        const table = document.getElementById("board"),
+        tableItems = table.getElementsByTagName("td"),
+        location = ((8*(y-1))+x-1),
+        cell = tableItems.item(location)
+        cell.innerText = ""
     }
     startGame(){
         //piece starting positions
