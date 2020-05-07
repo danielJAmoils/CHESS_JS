@@ -8,9 +8,10 @@ game class
 
     Todo
 
-    movement:
-        capturing
-        movment types
-        more than one piece clicked
+        movement:
+            movment types
+         turns
+         endings
+         
 
    
