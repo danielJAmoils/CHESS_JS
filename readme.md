@@ -10,7 +10,6 @@ game class
 
         movement:
             movment types
-         turns
          endings
          
 
