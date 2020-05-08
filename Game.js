@@ -1,6 +1,14 @@
+const turnEnum = {
+    stoped:0,
+    white:1,
+    black:2
+}
+
 class Game{
     constructor(){
+        this.turn = turnEnum.stoped
         this.board = new Board(8,8)//can change board size
+        this.startGame()
     }
     createPiece(type,color,x,y){
         const piece = new type(color,x,y)
@@ -16,15 +24,26 @@ class Game{
         //called when moving a piece
         const targetCell = this.board.cells[targetY-1][targetX-1],
         currentCell = this.board.cells[currentY-1][currentX-1]
-        targetCell.piece = currentCell.piece
-        currentCell.piece = null
-        currentCell.clicked = false
-        targetCell.piece.x = parseInt(targetX)
-        targetCell.piece.y = parseInt(targetY)
-        targetCell.status = statusEnum.Full
-        currentCell.status = statusEnum.Empty
-        targetCell.piece.drawPiece()
-        this.erasePiece(currentX,currentY)
+        //checks if turn matche piece
+        if((this.turn == 1 && currentCell.piece.color == "white") || (this.turn == 2 && currentCell.piece.color == "black")){
+            targetCell.piece = currentCell.piece
+            currentCell.piece = null
+            currentCell.clicked = false
+            targetCell.piece.x = parseInt(targetX)
+            targetCell.piece.y = parseInt(targetY)
+            targetCell.status = statusEnum.Full
+            currentCell.status = statusEnum.Empty
+            targetCell.piece.drawPiece()
+            this.erasePiece(currentX,currentY)
+            if(targetCell.piece.color == "white"){//changes turn
+                this.turn = turnEnum.black
+            }else{
+                this.turn = turnEnum.white
+            }
+        }else{
+            //unclick piece if not your turn
+            game.board.cells[currentY-1][currentX-1].clicked = false
+        }
 
 
     }
@@ -36,11 +55,22 @@ class Game{
         cell.innerText = ""
     }
     checkCapture(piece1,piece2){
-        if(piece1.color == piece2.color){
-            //if you try to move piece to same color piece it will not move
+        if((piece1.color == "white" && this.turn == 1)||(piece1.color == "black" && this.turn == 2)){
+            //checks if piece color matches turn color
+            if(piece1.color == piece2.color){
+                //if you try to move piece to same color piece it will not move
+            }else{
+                //when capturing
+                piece1.capture(piece2)
+                if(piece1.color == "white"){//changes turn
+                    this.turn = turnEnum.black
+                }else{
+                    this.turn = turnEnum.white
+                }
+            }
         }else{
-            //when capturing
-            piece1.capture(piece2)
+            //unclick piece if not your turn
+            game.board.cells[piece1.y-1][piece1.x-1].clicked = false
         }
     }
     startGame(){
@@ -88,5 +118,8 @@ class Game{
         //black queen
         this.createPiece(King,"black",5,1)
         //black king
+
+        this.turn = turnEnum.white
+        //set game turn to white
     }
 }
