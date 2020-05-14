@@ -15,6 +15,7 @@ game class
          pawn to queen
          castling
          check and check rules
+         unclick piece if no possible movements
 
          
 
