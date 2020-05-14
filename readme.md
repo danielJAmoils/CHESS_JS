@@ -9,8 +9,13 @@ game class
     Todo
 
         movement:
-            movment types
-         endings
+        pawn diagnol capture
+        jumping pieces
+         endings:victory/draw
+         pawn to queen
+         castling
+         check and check rules
+
          
 
    
