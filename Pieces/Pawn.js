@@ -29,7 +29,6 @@ class Pawn extends Piece{
                 return true
             }else{
                 //incorrect move
-                console.log(this.x,this.y,newX,newY)
                 return false
             }
         }
