@@ -1,6 +1,6 @@
 
 console.log("Main js")
-
+const game = new Game()
 
 function cellClicked(cell){
     let pieceClicked = false,
@@ -70,6 +70,16 @@ function resetCellColor(x,y){
     cell = tableItems.item(location)
     cell.style.backgroundColor = color
 }
+function unselectPiece(){
+    console.log("unselect")
+    for(let i = 0;i<8;i++){//checks if any cell has been clicked and if it has sets pieceClicked to true and gives x,y of clicked cell
+        for(let j = 0;j<8;j++){
+            if(game.board.cells[i][j].clicked){
+                game.board.cells[i][j].clicked = false
+                resetCellColor(j+1,i+1)
+            }
+        }
+    }
+}
 
-const game = new Game()
 console.log(game.board.cells)
