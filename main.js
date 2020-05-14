@@ -36,8 +36,36 @@ function cellClicked(cell){
     }else{
         // //if piece in cell
         game.board.cells[parseInt(y-1)][parseInt(x-1)].clicked = true
+        cell.style.backgroundColor = "blue"
     }
     
+}
+function resetCellColor(x,y){
+    let color = ""
+    if(y % 2 === 0){
+        //even row
+        if(x%2 == 0){
+            //black even row
+            color = "rgb(153, 159, 168)"
+        }else{
+            //white row even
+            color = "rgb(221, 215, 215)"
+        }
+    }else{
+        //odd row
+        if(x%2 == 0){
+            //white odd row
+            color = "rgb(153, 159, 168)"
+        }else{
+            //black row odd
+            color = "rgb(221, 215, 215)"
+        }
+    }
+    const table = document.getElementById("board"),
+    tableItems = table.getElementsByTagName("td"),
+    location = ((8*(y-1))+x-1),
+    cell = tableItems.item(location)
+    cell.style.backgroundColor = color
 }
 
 const game = new Game()

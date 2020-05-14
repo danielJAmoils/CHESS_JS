@@ -26,7 +26,8 @@ class Game{
         currentCell = this.board.cells[currentY-1][currentX-1]
         //checks if turn matche piece
         if((this.turn == 1 && currentCell.piece.color == "white") || (this.turn == 2 && currentCell.piece.color == "black")){
-                if(currentCell.piece.correctMovement(targetX,targetY)){//checks if movement is correct
+            if(currentCell.piece.correctMovement(targetX,targetY)){//checks if movement is correct
+                resetCellColor(currentX,currentY)
                 targetCell.piece = currentCell.piece
                 currentCell.piece = null
                 currentCell.clicked = false
@@ -44,6 +45,7 @@ class Game{
             }
         }else{
             //unclick piece if not your turn
+            resetCellColor(currentX,currentY)
             game.board.cells[currentY-1][currentX-1].clicked = false
         }
 
@@ -65,6 +67,7 @@ class Game{
                 }else{
                     //when capturing
                     piece1.capture(piece2)
+                    resetCellColor(piece1.x,piece1.y)
                     if(piece1.color == "white"){//changes turn
                         this.turn = turnEnum.black
                     }else{
@@ -74,6 +77,7 @@ class Game{
             }
         }else{
             //unclick piece if not your turn
+            resetCellColor(piece1.x,piece1.y)
             game.board.cells[piece1.y-1][piece1.x-1].clicked = false
         }
     }
