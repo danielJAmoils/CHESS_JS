@@ -24,32 +24,24 @@ class Game{
         //called when moving a piece
         const targetCell = this.board.cells[targetY-1][targetX-1],
         currentCell = this.board.cells[currentY-1][currentX-1]
-        //checks if turn matche piece
-        if((this.turn == 1 && currentCell.piece.color == "white") || (this.turn == 2 && currentCell.piece.color == "black")){
-            if(currentCell.piece.correctMovement(targetX,targetY)){//checks if movement is correct
-                resetCellColor(currentX,currentY)
-                targetCell.piece = currentCell.piece
-                currentCell.piece = null
-                currentCell.clicked = false
-                targetCell.piece.x = parseInt(targetX)
-                targetCell.piece.y = parseInt(targetY)
-                targetCell.status = statusEnum.Full
-                currentCell.status = statusEnum.Empty
-                targetCell.piece.drawPiece()
-                this.erasePiece(currentX,currentY)
-                if(targetCell.piece.color == "white"){//changes turn
-                    this.turn = turnEnum.black
-                }else{
-                    this.turn = turnEnum.white
-                }
-            }
-        }else{
-            //unclick piece if not your turn
+
+        if(currentCell.piece.correctMovement(targetX,targetY)){//checks if movement is correct
             resetCellColor(currentX,currentY)
-            game.board.cells[currentY-1][currentX-1].clicked = false
+            targetCell.piece = currentCell.piece
+            currentCell.piece = null
+            currentCell.clicked = false
+            targetCell.piece.x = parseInt(targetX)
+            targetCell.piece.y = parseInt(targetY)
+            targetCell.status = statusEnum.Full
+            currentCell.status = statusEnum.Empty
+            targetCell.piece.drawPiece()
+            this.erasePiece(currentX,currentY)
+            if(targetCell.piece.color == "white"){//changes turn
+                this.turn = turnEnum.black
+            }else{
+                this.turn = turnEnum.white
+            }
         }
-
-
     }
     erasePiece(x,y){
         const table = document.getElementById("board"),
@@ -59,8 +51,6 @@ class Game{
         cell.innerText = ""
     }
     checkCapture(piece1,piece2){
-        if((piece1.color == "white" && this.turn == 1)||(piece1.color == "black" && this.turn == 2)){
-            //checks if piece color matches turn color
             if(piece1.correctMovement(piece2.x,piece2.y)){//checks if movement is correct
                 if(piece1.color == piece2.color){
                     //if you try to move piece to same color piece it will not move
@@ -75,11 +65,6 @@ class Game{
                     }
                 }
             }
-        }else{
-            //unclick piece if not your turn
-            resetCellColor(piece1.x,piece1.y)
-            game.board.cells[piece1.y-1][piece1.x-1].clicked = false
-        }
     }
     startGame(){
         //piece starting positions

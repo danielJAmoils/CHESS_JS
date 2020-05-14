@@ -32,11 +32,15 @@ function cellClicked(cell){
 
         game.checkCapture(cell1.piece,cell2.piece)
     }else if(cell.innerHTML == ""){
-        // //if no piece in cell
+        //if no piece in cell
     }else{
-        // //if piece in cell
-        game.board.cells[parseInt(y-1)][parseInt(x-1)].clicked = true
-        cell.style.backgroundColor = "blue"
+        //if piece in cell
+        //checks if you clicked the right color piece
+        if((game.board.cells[parseInt(y-1)][parseInt(x-1)].piece.color == "white" && game.turn == 1)||(game.board.cells[parseInt(y-1)][parseInt(x-1)].piece.color == "black" && game.turn == 2)){
+            game.board.cells[parseInt(y-1)][parseInt(x-1)].clicked = true
+            cell.style.backgroundColor = "blue"
+            console.log('herb')
+        }
     }
     
 }
