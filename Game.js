@@ -19,26 +19,28 @@ class Game{
         cell.status = statusEnum.Full
         cell.piece = piece
     }
-    movePiece(td,targetX,targetY,currentX,currentY,){
+    movePiece(targetX,targetY,currentX,currentY,){
         //all attributes recived start at 1
         //called when moving a piece
         const targetCell = this.board.cells[targetY-1][targetX-1],
         currentCell = this.board.cells[currentY-1][currentX-1]
         //checks if turn matche piece
         if((this.turn == 1 && currentCell.piece.color == "white") || (this.turn == 2 && currentCell.piece.color == "black")){
-            targetCell.piece = currentCell.piece
-            currentCell.piece = null
-            currentCell.clicked = false
-            targetCell.piece.x = parseInt(targetX)
-            targetCell.piece.y = parseInt(targetY)
-            targetCell.status = statusEnum.Full
-            currentCell.status = statusEnum.Empty
-            targetCell.piece.drawPiece()
-            this.erasePiece(currentX,currentY)
-            if(targetCell.piece.color == "white"){//changes turn
-                this.turn = turnEnum.black
-            }else{
-                this.turn = turnEnum.white
+                if(currentCell.piece.correctMovement(targetX,targetY)){//checks if movement is correct
+                targetCell.piece = currentCell.piece
+                currentCell.piece = null
+                currentCell.clicked = false
+                targetCell.piece.x = parseInt(targetX)
+                targetCell.piece.y = parseInt(targetY)
+                targetCell.status = statusEnum.Full
+                currentCell.status = statusEnum.Empty
+                targetCell.piece.drawPiece()
+                this.erasePiece(currentX,currentY)
+                if(targetCell.piece.color == "white"){//changes turn
+                    this.turn = turnEnum.black
+                }else{
+                    this.turn = turnEnum.white
+                }
             }
         }else{
             //unclick piece if not your turn
@@ -57,15 +59,17 @@ class Game{
     checkCapture(piece1,piece2){
         if((piece1.color == "white" && this.turn == 1)||(piece1.color == "black" && this.turn == 2)){
             //checks if piece color matches turn color
-            if(piece1.color == piece2.color){
-                //if you try to move piece to same color piece it will not move
-            }else{
-                //when capturing
-                piece1.capture(piece2)
-                if(piece1.color == "white"){//changes turn
-                    this.turn = turnEnum.black
+            if(piece1.correctMovement(piece2.x,piece2.y)){//checks if movement is correct
+                if(piece1.color == piece2.color){
+                    //if you try to move piece to same color piece it will not move
                 }else{
-                    this.turn = turnEnum.white
+                    //when capturing
+                    piece1.capture(piece2)
+                    if(piece1.color == "white"){//changes turn
+                        this.turn = turnEnum.black
+                    }else{
+                        this.turn = turnEnum.white
+                    }
                 }
             }
         }else{

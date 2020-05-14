@@ -3,4 +3,7 @@ class Knight extends Piece{
         super(color,x,y,"♘","♞")
         super.drawPiece()
     }
+    correctMovement(){
+        return true
+    }
 }

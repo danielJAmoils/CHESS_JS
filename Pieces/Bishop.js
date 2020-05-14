@@ -3,4 +3,7 @@ class Bishop extends Piece{
         super(color,x,y,"♗","♝")
         super.drawPiece()
     }
+    correctMovement(){
+        return true
+    }
 }

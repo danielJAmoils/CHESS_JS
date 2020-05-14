@@ -11,7 +11,7 @@ function cellClicked(cell){
         y = cell.getAttribute("data-y") 
 
 
-    for(let i = 0;i<8;i++){
+    for(let i = 0;i<8;i++){//checks if any cell has been clicked and if it has sets pieceClicked to true and gives x,y of clicked cell
         for(let j = 0;j<8;j++){
             if(game.board.cells[i][j].clicked){
                 outsideY = i+1
@@ -24,7 +24,7 @@ function cellClicked(cell){
     if(cell.innerHTML == "" && pieceClicked){
         //if no piece in cell and piece has already been clicked,move piece
         //outside variables start at one
-        game.movePiece(cell,cell.getAttribute("data-x"),cell.getAttribute("data-y"),outsideX,outsideY)
+        game.movePiece(cell.getAttribute("data-x"),cell.getAttribute("data-y"),outsideX,outsideY)
     }else if(cell.innerHTML != "" && pieceClicked == true){
         //if you click one piece and then another
         const cell1 = game.board.cells[outsideY-1][outsideX-1],
