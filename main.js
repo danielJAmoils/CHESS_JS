@@ -39,7 +39,6 @@ function cellClicked(cell){
         if((game.board.cells[parseInt(y-1)][parseInt(x-1)].piece.color == "white" && game.turn == 1)||(game.board.cells[parseInt(y-1)][parseInt(x-1)].piece.color == "black" && game.turn == 2)){
             game.board.cells[parseInt(y-1)][parseInt(x-1)].clicked = true
             cell.style.backgroundColor = "blue"
-            console.log('herb')
         }
     }
     
@@ -48,7 +47,7 @@ function resetCellColor(x,y){
     let color = ""
     if(y % 2 === 0){
         //even row
-        if(x%2 == 0){
+        if(x%2 !== 0){
             //black even row
             color = "rgb(153, 159, 168)"
         }else{
