@@ -4,7 +4,7 @@ class Rook extends Piece{
         super.drawPiece()
     }
     correctMovement(newX,newY){
-        newX = parseInt(newX)
+        newX = parseInt(newX)//changes to numbers
         newY = parseInt(newY)
         //changes values to numbers
         if((this.x === newX && this.y !== newY)||(this.x !== newX && this.y === newY)){
