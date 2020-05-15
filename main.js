@@ -71,7 +71,6 @@ function resetCellColor(x,y){
     cell.style.backgroundColor = color
 }
 function unselectPiece(){
-    console.log("unselect")
     for(let i = 0;i<8;i++){//checks if any cell has been clicked and if it has sets pieceClicked to true and gives x,y of clicked cell
         for(let j = 0;j<8;j++){
             if(game.board.cells[i][j].clicked){
