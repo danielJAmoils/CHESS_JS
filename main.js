@@ -80,5 +80,3 @@ function unselectPiece(){
         }
     }
 }
-
-console.log(game.board.cells)

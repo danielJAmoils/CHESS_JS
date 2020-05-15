@@ -56,7 +56,6 @@ class Game{
                     //if you try to move piece to same color piece it will not move
                 }else{
                     //when capturing
-                    console.log(piece1)
                     resetCellColor(piece1.x,piece1.y)
                     piece1.capture(piece2)
                     if(piece1.color == "white"){//changes turn

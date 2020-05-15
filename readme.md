@@ -8,14 +8,19 @@ game class
 
     Todo
 
-        movement:
-        jumping pieces/stop pieces jumping
-         endings:victory/draw
-         pawn to queen
-         castling
-         check and check rules
-         unclick piece if no possible movements
-         make cell amount custimizable
+        MinimuuM:
+            jumping pieces/stop pieces jumping
+                bishop
+                queen
+                pawn double no jump
+             endings:victory/draw
+            pawn to queen
+            castling
+            check and check rules
+
+        Possible additons:    
+            make cell amount custimizable
+            make peice unselect automatic if piece can not move
 
          
 
