@@ -10,7 +10,7 @@ class Rook extends Piece{
         if(this.x === newX && this.y !== newY){
             if(this.y < newY){
                 //y moving down
-                for(let i = this.y;i<newY-1;i++){
+                for(let i = this.y;i<newY-2;i++){
                     console.log(this.y,newY)
                     if(game.board.cells[i][this.x-1].piece){                        
                         //piece blocking path y
@@ -24,7 +24,7 @@ class Rook extends Piece{
                 return true
             }else{
                 //y moving up
-                for(let i = newY-1;i<this.y-1;i++){
+                for(let i = newY;i<this.y-1;i++){
                     if(game.board.cells[i][this.x-1].piece){
                         //piece blocking path y
                         console.log('full-up')
@@ -40,7 +40,7 @@ class Rook extends Piece{
             console.log('x')
             if(this.x < newX){
                 //x moving down
-                for(let i = this.x;i<newX-1;i++){
+                for(let i = this.x;i<newX-2;i++){
                     console.log(this.x,newX)
                     if(game.board.cells[this.y-1][i].piece){                        
                         //piece blocking path x
@@ -54,7 +54,7 @@ class Rook extends Piece{
                 return true
             }else{
                 //x moving up
-                for(let i = newX-1;i<this.x-1;i++){
+                for(let i = newX;i<this.x-1;i++){
                     if(game.board.cells[this.y-1][i].piece){
                         //piece blocking path x
                         console.log('full-left')
