@@ -10,7 +10,6 @@ game class
 
         MinimuuM:
             jumping pieces/stop pieces jumping
-                bishop
                 queen
                 pawn double no jump
              endings:victory/draw
