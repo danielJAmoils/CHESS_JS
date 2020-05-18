@@ -10,9 +10,9 @@ game class
 
         MinimuuM:
             jumping pieces/stop pieces jumping
-                queen
                 pawn double no jump
-             endings:victory/draw
+                error check
+            endings:victory/draw
             pawn to queen
             castling
             check and check rules
