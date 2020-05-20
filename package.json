@@ -1,0 +1,20 @@
+{
+  "name": "chess",
+  "version": "1.0.0",
+  "description": "Chess game",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielJAmoils/CHESS_JS.git"
+  },
+  "keywords": [],
+  "author": "Daniel Amoils",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielJAmoils/CHESS_JS/issues"
+  },
+  "homepage": "https://github.com/danielJAmoils/CHESS_JS#readme"
+}
