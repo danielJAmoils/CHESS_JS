@@ -1,5 +1,6 @@
 Chess game
-
+game link:file:///C:/Users/danie/OneDrive/Documents/Chess_JS/Public/index.html
+test link:
 
 game class
     board-creates board
