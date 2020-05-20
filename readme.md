@@ -9,6 +9,7 @@ game class
     Todo
 
         MinimuuM:
+            next step should be to start adding tests
             jumping pieces/stop pieces jumping
                 pawn double no jump
                 error check
@@ -16,7 +17,10 @@ game class
             pawn to queen
             castling
             check and check rules
-            bugs-pawn with something too in frount?,rook moving backwards?
+            bugs-pawn with something too in frount?,rook moving backwards? knight blocked bishop when not supposed to down-left?
+                queen moving 2spaces too little.
+            install node and test-test onclicks by calling the cell clicked function
+                
 
         Possible additons:    
             make cell amount custimizable
