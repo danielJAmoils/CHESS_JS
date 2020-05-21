@@ -25,6 +25,7 @@ describe("Movement checks",function(){
         expect(tableItems[getIndex(7,2)].innerText).to.be.equal("")
         expect(tableItems[getIndex(5,2)].innerText).to.not.equal("")
         //reset game
+        resetGame()
     })
 })
 function getIndex(y,x){
@@ -35,4 +36,8 @@ function clickSquares(firstY,firstX,secondY,secondX){
     cell2 = tableItems[getIndex(secondY,secondX)]
     cellClicked(cell)
     cellClicked(cell2)
+}
+function resetGame(){//removes table and creates entire new game
+    table.parentNode.removeChild(table)
+    game = new Game
 }

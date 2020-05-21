@@ -1,6 +1,6 @@
 
 console.log("Main js")
-const game = new Game()
+let game = new Game()
 
 function cellClicked(cell){
     let pieceClicked = false,
@@ -79,4 +79,8 @@ function unselectPiece(){
             }
         }
     }
+}
+function restart(){//reloads page does not save anything
+    window.location.reload()
+    let game = new Game
 }

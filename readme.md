@@ -10,7 +10,6 @@ game class
     Todo
 
         MinimuuM:
-            add reset game for testing and because its a good feature
             next step should be to start adding tests
             jumping pieces/stop pieces jumping
                 pawn double no jump
@@ -21,8 +20,7 @@ game class
             check and check rules
             bugs-pawn with something too in frount?,rook moving backwards? knight blocked bishop when not supposed to down-left?
                 queen moving 2spaces too little.
-            install node and test-test onclicks by calling the cell clicked function
-                
+            deleate table at end of tests                
 
         Possible additons:    
             make cell amount custimizable
