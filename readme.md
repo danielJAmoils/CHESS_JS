@@ -1,6 +1,6 @@
 Chess game
 game link:file:///C:/Users/danie/OneDrive/Documents/Chess_JS/Public/index.html
-test link:
+test link:file:///C:/Users/danie/OneDrive/Documents/Chess_JS/Test/test.html
 
 game class
     board-creates board
@@ -10,6 +10,7 @@ game class
     Todo
 
         MinimuuM:
+            add reset game for testing and because its a good feature
             next step should be to start adding tests
             jumping pieces/stop pieces jumping
                 pawn double no jump
