@@ -20,12 +20,15 @@ game class
             check and check rules
             bugs-pawn with something too in frount?,rook moving backwards? knight blocked bishop when not supposed to down-left?
                 queen moving 2spaces too little.
-            deleate table at end of tests                
+            deleate table at end of tests         
+            clean up code       
 
         Possible additons:    
             make cell amount custimizable
             make peice unselect automatic if piece can not move
             add table items into an array so you dont have to recreate table in js every time you acsess it
+            connect an ai
+            click on piece twice to deselect
 
          
 
