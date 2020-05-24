@@ -16,6 +16,7 @@ describe("Board Array Checks",function(){
 describe("Movement checks",function(){
     it("pawn movement 1 ",function(){
         checkSquaresMovements(7,2,5,2)
+        checkSquaresMovementsFalse(7,3,5,3)
         //reset game
         resetGame()
     })
@@ -121,4 +122,9 @@ function resetGame(){//removes table and creates entire new game
     game = new Game
     table = document.getElementById("board")//links to new table
     tableItems = table.getElementsByTagName("td")
+}
+function checkSquaresMovementsFalse(firstY,firstX,secondY,secondX){
+    clickSquares(firstY,firstX,secondY,secondX)
+    expect(tableItems[getIndex(firstY,firstX)].innerText).to.not.equal("")
+    expect(tableItems[getIndex(secondY,secondX)].innerText).to.be.equal("")
 }

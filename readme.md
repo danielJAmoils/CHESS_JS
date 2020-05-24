@@ -17,6 +17,10 @@ game class
             endings:victory/draw
             pawn to queen
             castling
+                added basic right side castling
+                    need to check if pieces havent move and if havent castled
+                    need to add test
+                left side castling
             check and check rules
             bugs-pawn with something too in frount?,rook moving backwards? knight blocked bishop when not supposed to down-left?
                 queen moving 2spaces too little.
