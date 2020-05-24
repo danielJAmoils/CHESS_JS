@@ -29,6 +29,8 @@ game class
             add table items into an array so you dont have to recreate table in js every time you acsess it
             connect an ai
             click on piece twice to deselect
+            refactor restart game function in main.js
+            make chess board size responsive
 
          
 

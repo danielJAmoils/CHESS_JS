@@ -1,10 +1,5 @@
 let table = document.getElementById("board"),
 tableItems = table.getElementsByTagName("td")
-describe('test setup', function () {
-    it('setting up tests', function () {
-      expect(1 + 1).to.be.equal(2)
-    })
-})
 describe("Board Array Checks",function(){
     it("Board length", function(){
         console.log(game.board.cells.length)
@@ -19,9 +14,58 @@ describe("Board Array Checks",function(){
 })
 
 describe("Movement checks",function(){
-    it("pawnMovement",function(){
+    it("pawn movement 1 ",function(){
         checkSquaresMovements(7,2,5,2)
         //reset game
+        resetGame()
+    })
+    it("pawn movement test 2 ",function(){
+        checkSquaresMovements(7,4,5,4)
+        checkSquaresMovements(2,5,4,5)
+        checkSquaresMovements(5,4,4,5)
+        checkSquaresMovements(2,4,3,4)
+        checkSquaresMovements(4,5,3,4)
+        checkSquaresMovements(2,3,3,4)
+        checkSquaresMovements(7,3,5,3)
+        checkSquaresMovements(3,4,4,4)
+        checkSquaresMovements(5,3,4,4)
+        checkSquaresMovements(2,7,4,7)
+
+        resetGame()
+    })
+    it("knight movement test 1 ",function(){
+        checkSquaresMovements(8,2,6,3)
+        checkSquaresMovements(1,7,3,6)
+        checkSquaresMovements(6,3,4,4)
+        checkSquaresMovements(3,6,4,4)
+        checkSquaresMovements(7,3,6,3)
+        checkSquaresMovements(4,4,6,3)
+        checkSquaresMovements(7,7,6,7)
+        checkSquaresMovements(6,3,7,5)
+        checkSquaresMovements(8,7,6,6)
+        checkSquaresMovements(7,5,6,7)
+        checkSquaresMovements(6,6,4,5)
+        checkSquaresMovements(6,7,8,6)
+        checkSquaresMovements(4,5,2,4)
+        checkSquaresMovements(8,6,7,4)
+        checkSquaresMovements(2,4,1,6)
+        checkSquaresMovements(7,4,8,2)
+        checkSquaresMovements(1,6,2,8)
+
+        resetGame()
+    })
+    it("rook movement test 1 ",function(){
+        checkSquaresMovements(7,1,5,1)
+        checkSquaresMovements(2,1,4,1)
+        checkSquaresMovements(8,1,6,1)
+        checkSquaresMovements(1,1,3,1)
+        checkSquaresMovements(6,1,6,4)
+        checkSquaresMovements(3,1,3,3)
+        checkSquaresMovements(6,4,2,4)
+        checkSquaresMovements(3,3,7,3)
+        checkSquaresMovements(2,4,2,3)
+        checkSquaresMovements(7,3,2,3)// rook fails to caputre upward
+
         resetGame()
     })
     it("mutliple piece with multiple movements test 1 ",function(){
@@ -54,7 +98,7 @@ describe("Movement checks",function(){
         checkSquaresMovements(7,2,5,2)
         checkSquaresMovements(4,1,5,2)
         checkSquaresMovements(6,1,5,2)
-        checkSquaresMovements(1,1,8,1)//fix
+        checkSquaresMovements(1,1,8,1)//rook fails to capture downward
         resetGame()
     })
 })
