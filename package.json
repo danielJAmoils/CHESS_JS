@@ -4,7 +4,8 @@
   "description": "Chess game",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd Test && test.html",
+    "start": "cd Public && explorer index.html"
   },
   "repository": {
     "type": "git",
