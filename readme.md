@@ -17,7 +17,6 @@ game class
             endings:victory/draw
             pawn to queen
             castling
-                added basic right side castling
                     need to check if pieces havent move and if havent castled
                     need to add test
                 left side castling

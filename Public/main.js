@@ -82,5 +82,4 @@ function unselectPiece(){
 }
 function restart(){//reloads page does not save anything
     window.location.reload()
-    let game = new Game
 }
