@@ -12,7 +12,6 @@ game class
         MinimuuM:
             next step should be to start adding tests
             jumping pieces/stop pieces jumping
-                pawn double no jump
                 error check
             endings:victory/draw
             pawn to queen

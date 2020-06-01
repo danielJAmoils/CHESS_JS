@@ -19,7 +19,7 @@ class Pawn extends Piece{
             //when not capturing
             if(this.color == "white"){
                 //white movement
-                if(this.y === 7 && newY === this.y-2 && this.x === newX){//double move check white
+                if(this.y === 7 && newY === this.y-2 && this.x === newX && !game.board.cells[this.y-2][this.x-1].piece){//double move check white
                     return true
                 }
                 if(newX === this.x && newY === this.y-1){
@@ -31,7 +31,7 @@ class Pawn extends Piece{
                 }
             }else{
                 //black movement
-                if(this.y === 2 && newY === this.y+2 && this.x === newX){//double move check white
+                if(this.y === 2 && newY === this.y+2 && this.x === newX && !game.board.cells[this.y][this.x-1].piece){//double move check white
                     return true
                 }
                 if(newX === this.x && newY === this.y+1){
