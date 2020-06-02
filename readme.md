@@ -22,7 +22,6 @@ game class
             check and check rules
             bugs-pawn with something too in frount?,rook moving backwards? knight blocked bishop when not supposed to down-left?
                 queen moving 2spaces too little.
-            deleate table at end of tests         
             clean up code       
 
         Possible additons:    

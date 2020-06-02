@@ -1,5 +1,4 @@
 
-console.log("Main js")
 let game = new Game()
 
 function cellClicked(cell){

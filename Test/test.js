@@ -2,7 +2,6 @@ let table = document.getElementById("board"),
 tableItems = table.getElementsByTagName("td")
 describe("Board Array Checks",function(){
     it("Board length", function(){
-        console.log(game.board.cells.length)
         expect(game.board.cells.length).to.be.equal(8)
         game.board.cells.forEach(element => {
             expect(element.length).to.be.equal(8)

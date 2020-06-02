@@ -10,10 +10,8 @@ class King extends Piece{
             return true
         }else if(this.x - 2 === newX&& this.y === newY){
             //castiling left
-            console.log("c left")
             if(game.board.cells[this.y-1][this.x-2].piece || game.board.cells[this.y-1][this.x-4].piece){
                 //piece blocking
-                console.log("blocked left")
                 return false
             }
             //start castling left
@@ -25,7 +23,6 @@ class King extends Piece{
             //castiling right
             if(game.board.cells[this.y-1][this.x].piece){
                 //piece blocking
-                console.log("blocked right")
                 return false
             }
             //start castling right

@@ -22,6 +22,12 @@ class Game{
     movePiece(targetX,targetY,currentX,currentY,){
         //all attributes recived start at 1
         //called when moving a piece
+        //        checkSquaresMovements(3,6,4,4)
+        //test log for getting test function
+
+        //
+        //console.log(`checkSquaresMovements(${currentY},${currentX},${targetY},${targetX})`)
+        //
         const targetCell = this.board.cells[targetY-1][targetX-1],
         currentCell = this.board.cells[currentY-1][currentX-1]
 
@@ -51,6 +57,10 @@ class Game{
         cell.innerText = ""
     }
     checkCapture(piece1,piece2){
+        //get function movement for test
+        //
+        //console.log(`checkSquaresMovements(${piece1.y},${piece1.x},${piece2.y},${piece2.x})`)
+        //
             if(piece1.correctMovement(piece2.x,piece2.y)){//checks if movement is correct
                 if(piece1.color == piece2.color){
                     //if you try to move piece to same color piece it will not move
