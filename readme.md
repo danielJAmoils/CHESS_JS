@@ -13,6 +13,7 @@ game class
             next step should be to start adding tests
             jumping pieces/stop pieces jumping
                 error check
+                might be checking on cell grid location rather than board grid location
             endings:victory/draw
             pawn to queen
             castling
@@ -25,6 +26,7 @@ game class
             clean up code       
 
         Possible additons:    
+            typescript will make it so much easier
             make cell amount custimizable
             make peice unselect automatic if piece can not move
             add table items into an array so you dont have to recreate table in js every time you acsess it
@@ -32,6 +34,7 @@ game class
             click on piece twice to deselect
             refactor restart game function in main.js
             make chess board size responsive
+            add js dock notations
 
          
 
