@@ -1,7 +1,7 @@
 
 let game = new Game()
 
-function cellClicked(cell){
+function cellClicked(cell:HTMLTableDataCellElement){
     let pieceClicked = false,
     outsideX = 0,
     outsideY = 0
@@ -44,7 +44,7 @@ function cellClicked(cell){
     }
     
 }
-function resetCellColor(x,y){
+function resetCellColor(x:number,y:number){
     let color = ""
     if(y % 2 === 0){
         //even row

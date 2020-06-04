@@ -6,18 +6,18 @@ const turnEnum = {
 }
 
 class Game{
-    turn:any
+    turn:number
     board:Board
     constructor(){
         this.turn = turnEnum.stoped
         this.board = new Board(8,8)//can change board size
         this.startGame()
     }
-    createPiece(type,color,x,y){
+    createPiece(type,color:string,x:number,y:number){
         const piece = new type(color,x,y)
         this.addPieceToBoard(piece)
     }
-    addPieceToBoard(piece){
+    addPieceToBoard(piece:Piece){
         const cell = this.board.cells[piece.y-1][piece.x-1]
         cell.status = statusEnum.Full
         cell.piece = piece
@@ -52,7 +52,7 @@ class Game{
             }
         }
     }
-    erasePiece(x,y){
+    erasePiece(x:number,y:number){
         const table = document.getElementById("board"),
         tableItems = table.getElementsByTagName("td"),
         location = ((8*(y-1))+x-1),

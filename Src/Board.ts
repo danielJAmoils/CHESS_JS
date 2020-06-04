@@ -1,10 +1,10 @@
 class Board{
     cells:Array<Array<undefined|Cell>>
-    constructor(x,y){
+    constructor(x:number,y:number){
         this.cells = [[],[],[],[],[],[],[],[]]
         this.createBoard(x,y)
     }
-    createBoard(x,y){
+    createBoard(x:number,y:number){
         //function for creating chess board layout
         const table = document.createElement("table");
         table.id = "board"

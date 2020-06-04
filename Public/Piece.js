@@ -26,5 +26,4 @@ class Piece {
         cell.innerText = this.symbol;
     }
 }
-console.log('bruh');
 //# sourceMappingURL=Piece.js.map

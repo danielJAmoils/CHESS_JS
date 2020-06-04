@@ -1,6 +1,6 @@
 class Rook extends Piece{
     castling:boolean
-    constructor(color,x,y){
+    constructor(color:string,x:number,y:number){
         super(color,x,y,"♖","♜")
         this.castling = false
         super.drawPiece()

@@ -1,5 +1,5 @@
 class Knight extends Piece{
-    constructor(color,x,y){
+    constructor(color:string,x:number,y:number){
         super(color,x,y,"♘","♞")
         super.drawPiece()
     }

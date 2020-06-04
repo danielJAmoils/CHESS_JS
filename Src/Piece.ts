@@ -3,7 +3,7 @@ class Piece{
     x:number
     y:number
     symbol:string
-    constructor(color,x,y,whiteSymbol,blackSymbol){
+    constructor(color:string,x:number,y:number,whiteSymbol:string,blackSymbol:string){
         this.color = color
         this.x = x
         this.y = y
@@ -14,7 +14,7 @@ class Piece{
         }
     }
     
-    capture(piece2){
+    capture(piece2:Piece){
         const targetCell = game.board.cells[piece2.y-1][piece2.x-1],
             oldCell = game.board.cells[this.y-1][this.x-1]
             game.erasePiece(piece2.x,piece2.y)
@@ -35,4 +35,3 @@ class Piece{
         cell.innerText = this.symbol
     }
 }
-console.log('bruh')

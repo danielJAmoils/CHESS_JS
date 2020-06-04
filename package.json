@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "cd Test && test.html",
-    "start": "cd Public && explorer index.html"
+    "start": "cd Public && explorer index.html",
+    "compile": "tsc"
   },
   "repository": {
     "type": "git",
