@@ -25,10 +25,12 @@ function cellClicked(cell) {
         //if no piece in cell
     }
     else {
+        const cellY = parseInt(y) - 1;
+        const cellX = parseInt(x) - 1;
         //if piece in cell
         //checks if you clicked the right color piece
-        if ((game.board.cells[parseInt(y - 1)][parseInt(x - 1)].piece.color == "white" && game.turn == 1) || (game.board.cells[parseInt(y - 1)][parseInt(x - 1)].piece.color == "black" && game.turn == 2)) {
-            game.board.cells[parseInt(y - 1)][parseInt(x - 1)].clicked = true;
+        if ((game.board.cells[cellY][cellX].piece.color == "white" && game.turn == 1) || (game.board.cells[cellY][cellX].piece.color == "black" && game.turn == 2)) {
+            game.board.cells[cellY][cellX].clicked = true;
             cell.style.backgroundColor = "blue";
         }
     }

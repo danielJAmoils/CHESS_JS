@@ -1,4 +1,5 @@
 class Board{
+    cells:Array<Array<undefined|Cell>>
     constructor(x,y){
         this.cells = [[],[],[],[],[],[],[],[]]
         this.createBoard(x,y)

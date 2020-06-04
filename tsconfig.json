@@ -3,6 +3,7 @@
       "target": "ESNext",
       "module": "commonjs",
       "sourceMap": true,
-      "outDir": "./Public"
+      "outDir": "./Public",
+      "watch": true
     }
   }

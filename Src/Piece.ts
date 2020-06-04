@@ -1,4 +1,8 @@
 class Piece{
+    color:string
+    x:number
+    y:number
+    symbol:string
     constructor(color,x,y,whiteSymbol,blackSymbol){
         this.color = color
         this.x = x
@@ -31,3 +35,4 @@ class Piece{
         cell.innerText = this.symbol
     }
 }
+console.log('bruh')
