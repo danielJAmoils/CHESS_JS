@@ -77,6 +77,8 @@ describe("Movement checks",function(){
         checkSquaresMovements(6,3,7,2)
         checkSquaresMovements(1,2,2,1)
         checkSquaresMovements(7,2,5,4)
+
+        resetGame()
     })
     it("rook movement test 1 ",function(){
         checkSquaresMovements(7,1,5,1)
