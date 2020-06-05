@@ -1,11 +1,11 @@
 class Rook extends Piece{
-    castling:boolean
+    castling?:boolean
     constructor(color:string,x:number,y:number){
         super(color,x,y,"♖","♜")
         this.castling = false
         super.drawPiece()
     }
-    correctMovement(newX:number,newY:number){
+    correctMovement?(newX:number,newY:number){
         if(this.castling){
             //castling
             this.castling = false
