@@ -14,7 +14,7 @@ function cellClicked(cell) {
     if (cell.innerHTML == "" && pieceClicked) {
         //if no piece in cell and piece has already been clicked,move piece
         //outside variables start at one
-        game.movePiece(cell.getAttribute("data-x"), cell.getAttribute("data-y"), outsideX, outsideY);
+        game.movePiece(parseInt(cell.getAttribute("data-x")), parseInt(cell.getAttribute("data-y")), outsideX, outsideY);
     }
     else if (cell.innerHTML != "" && pieceClicked == true) {
         //if you click one piece and then another

@@ -3,9 +3,7 @@ class Bishop extends Piece{
         super(color,x,y,"♗","♝")
         super.drawPiece()
     }
-    correctMovement(newX,newY){
-        newX = parseInt(newX)
-        newY = parseInt(newY)//changes to numbers
+    correctMovement(newX:number,newY:number){
         if(Math.abs(this.x-newX) === Math.abs(this.y-newY)){//correct movment check
             if(this.x < newX&&this.y < newY){//moving down right
                 for(let i = Math.abs(this.x-newX)-1;i>0;i--){

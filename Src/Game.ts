@@ -13,7 +13,7 @@ class Game{
         this.board = new Board(8,8)//can change board size
         this.startGame()
     }
-    createPiece(type,color:string,x:number,y:number){
+    createPiece(type: typeof Pawn,color:string,x:number,y:number){
         const piece = new type(color,x,y)
         this.addPieceToBoard(piece)
     }
@@ -22,7 +22,7 @@ class Game{
         cell.status = statusEnum.Full
         cell.piece = piece
     }
-    movePiece(targetX,targetY,currentX,currentY,){
+    movePiece(targetX:number,targetY:number,currentX:number,currentY:number,){
         //all attributes recived start at 1
         //called when moving a piece
         //        checkSquaresMovements(3,6,4,4)
@@ -39,8 +39,8 @@ class Game{
             targetCell.piece = currentCell.piece
             currentCell.piece = null
             currentCell.clicked = false
-            targetCell.piece.x = parseInt(targetX)
-            targetCell.piece.y = parseInt(targetY)
+            targetCell.piece.x = targetX
+            targetCell.piece.y = targetY
             targetCell.status = statusEnum.Full
             currentCell.status = statusEnum.Empty
             targetCell.piece.drawPiece()
@@ -59,7 +59,7 @@ class Game{
         cell = tableItems.item(location)
         cell.innerText = ""
     }
-    checkCapture(piece1,piece2){
+    checkCapture(piece1:Pawn,piece2:Pawn){
         //get function movement for test
         //
         //console.log(`checkSquaresMovements(${piece1.y},${piece1.x},${piece2.y},${piece2.x})`)

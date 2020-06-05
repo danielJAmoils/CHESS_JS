@@ -9,6 +9,7 @@ game class
 
     Todo
         MinimuuM:
+            add type to cell.piece it is not working and being weird
             next step should be to start adding tests
             jumping pieces/stop pieces jumping
                 error check
@@ -34,6 +35,7 @@ game class
             refactor restart game function in main.js
             make chess board size responsive
             add js dock notations
+            bunfle js into one file
 
          
 

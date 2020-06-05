@@ -4,9 +4,6 @@ class Pawn extends Piece {
         super.drawPiece();
     }
     correctMovement(newX, newY) {
-        newX = parseInt(newX);
-        newY = parseInt(newY);
-        //changes values to numbers
         if (game.board.cells[newY - 1][newX - 1].piece) {
             //when pawn capturing
             if (Math.abs(this.x - newX) === 1 && Math.abs(this.y - newY) === 1) { //diagnol capture true

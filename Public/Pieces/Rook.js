@@ -5,9 +5,6 @@ class Rook extends Piece {
         super.drawPiece();
     }
     correctMovement(newX, newY) {
-        newX = parseInt(newX); //changes to numbers
-        newY = parseInt(newY);
-        //changes values to numbers
         if (this.castling) {
             //castling
             this.castling = false;

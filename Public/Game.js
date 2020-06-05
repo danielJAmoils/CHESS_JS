@@ -32,8 +32,8 @@ class Game {
             targetCell.piece = currentCell.piece;
             currentCell.piece = null;
             currentCell.clicked = false;
-            targetCell.piece.x = parseInt(targetX);
-            targetCell.piece.y = parseInt(targetY);
+            targetCell.piece.x = targetX;
+            targetCell.piece.y = targetY;
             targetCell.status = statusEnum.Full;
             currentCell.status = statusEnum.Empty;
             targetCell.piece.drawPiece();
