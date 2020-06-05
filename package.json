@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cd Test && test.html",
     "start": "cd Public && explorer index.html",
-    "compile": "tsc"
+    "compile src": "cd src && tsc"
   },
   "repository": {
     "type": "git",
