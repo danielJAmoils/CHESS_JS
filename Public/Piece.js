@@ -25,5 +25,8 @@ class Piece {
         const table = document.getElementById("board"), tableItems = table.getElementsByTagName("td"), location = ((8 * (this.y - 1)) + this.x - 1), cell = tableItems.item(location);
         cell.innerText = this.symbol;
     }
+    correctMovement(newX, newY) {
+        return true;
+    }
 }
 //# sourceMappingURL=Piece.js.map

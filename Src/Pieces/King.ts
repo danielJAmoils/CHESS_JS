@@ -3,7 +3,7 @@ class King extends Piece{
         super(color,x,y,"♔","♚")
         super.drawPiece()
     }
-    correctMovement?(newX:number,newY:number){
+    correctMovement(newX:number,newY:number){
         if(Math.abs(this.x-newX) <= 1 && Math.abs(this.y-newY) <= 1 ){
             return true
         }else if(this.x - 2 === newX&& this.y === newY){

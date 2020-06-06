@@ -5,7 +5,7 @@ let statusEnum = {
 
 class Cell{
     status:number
-    piece: Rook
+    piece: Piece
     clicked:boolean
     constructor(status:number,clicked:boolean){
         this.status = status

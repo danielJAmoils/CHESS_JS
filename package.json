@@ -4,8 +4,8 @@
   "description": "Chess game",
   "main": "main.js",
   "scripts": {
-    "test": "cd Test && test.html",
-    "start": "cd Public && explorer index.html",
+    "test": "cd src && tsc && cd.. && cd Test && test.html",
+    "start": "cd src && tsc && cd.. && cd Public && explorer index.html",
     "compile":"cd src && tsc"
   },
   "repository": {

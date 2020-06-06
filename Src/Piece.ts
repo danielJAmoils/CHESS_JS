@@ -3,6 +3,7 @@ class Piece{
     x:number
     y:number
     symbol:string
+    castling?:boolean
     constructor(color:string,x:number,y:number,whiteSymbol:string,blackSymbol:string){
         this.color = color
         this.x = x
@@ -33,5 +34,8 @@ class Piece{
         location = ((8*(this.y-1))+this.x-1),
         cell = tableItems.item(location)
         cell.innerText = this.symbol
+    }
+    correctMovement?(newX:number,newY:number):boolean{//dummy function to make pieces compatible with piece type
+        return true
     }
 }

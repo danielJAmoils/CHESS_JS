@@ -5,7 +5,7 @@ class Rook extends Piece{
         this.castling = false
         super.drawPiece()
     }
-    correctMovement?(newX:number,newY:number){
+    correctMovement(newX:number,newY:number){
         if(this.castling){
             //castling
             this.castling = false

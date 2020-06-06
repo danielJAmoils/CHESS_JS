@@ -3,7 +3,7 @@ class Queen extends Piece{
         super(color,x,y,"♕","♛")
         super.drawPiece()
     }
-    correctMovement?(newX:number,newY:number){
+    correctMovement(newX:number,newY:number){
         if(Math.abs(this.x-newX) === Math.abs(this.y-newY)){//bishop like movement
             if(this.x < newX&&this.y < newY){//moving down right
                 for(let i = Math.abs(this.x-newX)-1;i>0;i--){

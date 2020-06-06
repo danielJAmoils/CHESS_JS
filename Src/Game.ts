@@ -59,7 +59,7 @@ class Game{
         cell = tableItems.item(location)
         cell.innerText = ""
     }
-    checkCapture(piece1:Pawn,piece2:Pawn){
+    checkCapture(piece1:Piece,piece2:Piece){
         //get function movement for test
         //
         //console.log(`checkSquaresMovements(${piece1.y},${piece1.x},${piece2.y},${piece2.x})`)

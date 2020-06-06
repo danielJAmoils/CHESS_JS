@@ -4,6 +4,6 @@
       "module": "commonjs",
       "sourceMap": true,
       "outDir": "../Public",
-      "watch": true
+      "watch": false
     }
   }
