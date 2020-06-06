@@ -4,6 +4,7 @@ class Piece{
     y:number
     symbol:string
     castling?:boolean
+    hasMoved?:boolean
     constructor(color:string,x:number,y:number,whiteSymbol:string,blackSymbol:string){
         this.color = color
         this.x = x

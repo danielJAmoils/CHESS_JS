@@ -3,6 +3,7 @@ class Rook extends Piece {
         super(color, x, y, "♖", "♜");
         this.castling = false;
         super.drawPiece();
+        this.hasMoved = false;
     }
     correctMovement(newX, newY) {
         if (this.castling) {
@@ -24,6 +25,7 @@ class Rook extends Piece {
                             //path clear y
                         }
                     }
+                    this.hasMoved = true;
                     return true;
                 }
                 else {
@@ -37,6 +39,7 @@ class Rook extends Piece {
                             //path clear y
                         }
                     }
+                    this.hasMoved = true;
                     return true;
                 }
             }
@@ -52,6 +55,7 @@ class Rook extends Piece {
                             //path clear x
                         }
                     }
+                    this.hasMoved = true;
                     return true;
                 }
                 else {
@@ -65,6 +69,7 @@ class Rook extends Piece {
                             //path clear x
                         }
                     }
+                    this.hasMoved = true;
                     return true;
                 }
             }

@@ -4,6 +4,7 @@ class Rook extends Piece{
         super(color,x,y,"♖","♜")
         this.castling = false
         super.drawPiece()
+        this.hasMoved = false
     }
     correctMovement(newX:number,newY:number){
         if(this.castling){
@@ -23,6 +24,7 @@ class Rook extends Piece{
                             //path clear y
                         }
                     }
+                    this.hasMoved = true
                     return true
                 }else{
                     //y moving up
@@ -34,6 +36,7 @@ class Rook extends Piece{
                             //path clear y
                         }
                     }
+                    this.hasMoved = true
                     return true
                 }
             }else if(this.x !== newX && this.y === newY){
@@ -47,6 +50,7 @@ class Rook extends Piece{
                             //path clear x
                         }
                     }
+                    this.hasMoved = true
                     return true
                 }else{
                     //x moving up
@@ -58,6 +62,7 @@ class Rook extends Piece{
                             //path clear x
                         }
                     }
+                    this.hasMoved = true
                     return true
                 }
             }else{
