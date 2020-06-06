@@ -13,11 +13,10 @@ describe("Board Array Checks",function(){
 })
 
 describe("Movement checks",function(){
+    this.afterEach(resetGame)//resets game between each it
     it("pawn movement 1 ",function(){
         checkSquaresMovements(7,2,5,2)
         checkSquaresMovementsFalse(7,3,5,3)
-        //reset game
-        resetGame()
     })
     it("pawn movement test 2 ",function(){
         checkSquaresMovements(7,4,5,4)
@@ -30,8 +29,6 @@ describe("Movement checks",function(){
         checkSquaresMovements(3,4,4,4)
         checkSquaresMovements(5,3,4,4)
         checkSquaresMovements(2,7,4,7)
-
-        resetGame()
     })
     it("knight movement test 1 ",function(){
         checkSquaresMovements(8,2,6,3)
@@ -51,8 +48,6 @@ describe("Movement checks",function(){
         checkSquaresMovements(2,4,1,6)
         checkSquaresMovements(7,4,8,2)
         checkSquaresMovements(1,6,2,8)
-
-        resetGame()
     })
     it("bishop movement test 1 ",function(){
         checkSquaresMovements(7,4,6,4)
@@ -77,8 +72,6 @@ describe("Movement checks",function(){
         checkSquaresMovements(6,3,7,2)
         checkSquaresMovements(1,2,2,1)
         checkSquaresMovements(7,2,5,4)
-
-        resetGame()
     })
     it("rook movement test 1 ",function(){
         checkSquaresMovements(7,1,5,1)
@@ -91,8 +84,6 @@ describe("Movement checks",function(){
         checkSquaresMovements(3,3,7,3)
         checkSquaresMovements(2,4,2,3)
         checkSquaresMovements(7,3,2,3)// rook fails to caputre upward
-
-        resetGame()
     })
     it("queen movement test 1 ",function(){
         checkSquaresMovements(7,4,6,4)
@@ -116,7 +107,25 @@ describe("Movement checks",function(){
         checkSquaresMovements(7,3,6,3)
         checkSquaresMovements(5,6,7,6)
         checkSquaresMovements(6,3,5,3)
-        checkSquaresMovements(7,6,7,2)
+        checkSquaresMovements(7,6,7,2)//fail
+    })
+    it("castling test 1 ",function(){
+        checkSquaresMovements(8,7,6,6)
+        checkSquaresMovements(2,6,3,6)
+        checkSquaresMovementsFalse(8,5,8,7)
+    })
+    it("castiling test 2 ",function(){
+        checkSquaresMovements(7,7,6,7)
+        checkSquaresMovements(2,7,3,7)
+        checkSquaresMovements(8,6,6,8)
+        checkSquaresMovements(2,5,3,5)
+        checkSquaresMovements(8,7,6,6)
+        checkSquaresMovements(2,4,3,4)
+        checkSquaresMovements(8,5,8,7)
+        checkSquaresMovements(8,8,8,6)
+        expect(tableItems[getIndex(8,8)].innerText).to.be.equal("")//rook movement test
+        expect(tableItems[getIndex(8,6)].innerText).to.not.equal("")//rook movement test
+
     })
     it("mutliple piece with multiple movements test 1 ",function(){
         /*chess code for test being done
@@ -149,7 +158,6 @@ describe("Movement checks",function(){
         checkSquaresMovements(4,1,5,2)
         checkSquaresMovements(6,1,5,2)
         checkSquaresMovements(1,1,8,1)//rook fails to capture downward
-        resetGame()
     })
 })
 function getIndex(y,x){
