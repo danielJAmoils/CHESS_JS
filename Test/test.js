@@ -94,6 +94,30 @@ describe("Movement checks",function(){
 
         resetGame()
     })
+    it("queen movement test 1 ",function(){
+        checkSquaresMovements(7,4,6,4)
+        checkSquaresMovements(2,4,3,4)
+        checkSquaresMovements(8,4,7,4)
+        checkSquaresMovements(1,4,2,4)
+        checkSquaresMovements(7,4,3,8)
+        checkSquaresMovements(2,4,4,2)
+        checkSquaresMovements(3,8,2,7)
+        checkSquaresMovements(4,2,6,4)
+        checkSquaresMovements(2,7,1,6)
+        checkSquaresMovements(6,4,7,5)
+        checkSquaresMovements(8,2,6,3)
+        checkSquaresMovements(2,6,4,6)
+        checkSquaresMovements(6,3,5,5)
+        checkSquaresMovements(7,5,5,5)
+        checkSquaresMovements(1,6,4,6)
+        checkSquaresMovements(5,5,4,6)
+        checkSquaresMovements(8,3,5,6)
+        checkSquaresMovements(4,6,5,6)
+        checkSquaresMovements(7,3,6,3)
+        checkSquaresMovements(5,6,7,6)
+        checkSquaresMovements(6,3,5,3)
+        checkSquaresMovements(7,6,7,2)
+    })
     it("mutliple piece with multiple movements test 1 ",function(){
         /*chess code for test being done
         f4,Nc6,e3,Nf,Nc3,h5,a3,e6,d4,h4,Be2,d6,Na4,Ne7,h3,c6,Nf3,b5,Nc3,Bb7,Qd3,a5,b4,axb4,axb4,Rxa1

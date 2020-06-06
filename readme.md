@@ -9,7 +9,6 @@ game class
 
     Todo
         MinimuuM:
-            add type to cell.piece it is not working and being weird
             next step should be to start adding tests
             jumping pieces/stop pieces jumping
                 error check
@@ -26,7 +25,6 @@ game class
             clean up code       
 
         Possible additons:    
-            typescript will make it so much easier
             make cell amount custimizable
             make peice unselect automatic if piece can not move
             add table items into an array so you dont have to recreate table in js every time you acsess it
@@ -35,7 +33,7 @@ game class
             refactor restart game function in main.js
             make chess board size responsive
             add js dock notations
-            bunfle js into one file
+            bundle js into one file
 
          
 
