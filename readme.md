@@ -12,19 +12,13 @@ game class
             bundle all js into one file(use tsc compiler)
             add description text
             jumping pieces/stop pieces jumping
-                error check
-                might be checking on cell grid location rather than board grid location
             endings:victory/draw
             pawn to queen
-            castling
-                    need to add tests
-                left side castling
             check and check rules
                 king can not move into check king cannot move to where opposite pawn moves because there is no piece there yet
                 need to make sure that pieces can not move while king is in check
                 tests for isInCheck
-            bugs-pawn with something too in frount?,rook moving backwards? knight blocked bishop when not supposed to down-left?
-                queen moving 2spaces too little.
+            tests
             clean up code       
 
         Possible additons:    
@@ -36,7 +30,6 @@ game class
             refactor restart game function in main.js
             make chess board size responsive
             add js dock notations
-            bundle js into one file
             make getting pieces its own function which take a callback with what to do with the pieces
             make bishop and piece movement checks there own functions so they do not have to be repeated
 
