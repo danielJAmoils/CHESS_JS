@@ -9,9 +9,13 @@ node_modules
 !.vscode/tasks.json
 .vscode/launch.json
 !.vscode/extensions.json
+#Tsconfig
+/Src/tsconfig.json
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+#Ignores typescript map files which are not needed except for debuging  (i tink)
+*.js.map
 
 # End of https://www.gitignore.io/api/visualstudiocode
