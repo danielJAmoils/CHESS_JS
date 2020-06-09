@@ -4,9 +4,9 @@
   "description": "Chess game",
   "main": "main.js",
   "scripts": {
-    "test": "cd src && tsc && cd.. && cd Test && test.html",
+    "test": "cd Test && test.html",
     "start": "cd src && tsc && cd.. && cd Public && explorer index.html",
-    "compile and watch": "cd src && tsc --watch",
+    "compileAndWatch": "cd src && tsc --watch",
     "compile": "cd src && tsc"
 
   },

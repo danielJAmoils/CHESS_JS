@@ -9,14 +9,15 @@ game class
 
     Todo
         MinimuuM:
-            next step should be to start adding tests
+            bundle all js into one file(use tsc compiler)
+            add description text
             jumping pieces/stop pieces jumping
                 error check
                 might be checking on cell grid location rather than board grid location
             endings:victory/draw
             pawn to queen
             castling
-                    need to add test
+                    need to add tests
                 left side castling
             check and check rules
                 made isInCheck function
@@ -37,6 +38,7 @@ game class
             add js dock notations
             bundle js into one file
             make getting pieces its own function which take a callback with what to do with the pieces
+            make bishop and piece movement checks there own functions so they do not have to be repeated
 
          
 
