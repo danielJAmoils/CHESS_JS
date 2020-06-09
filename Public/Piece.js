@@ -19,6 +19,7 @@ class Piece {
         targetCell.piece = this;
         oldCell.clicked = false;
         oldCell.status = statusEnum.Empty;
+        oldCell.piece = null;
         this.drawPiece();
     }
     drawPiece() {

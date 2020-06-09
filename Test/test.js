@@ -1,24 +1,66 @@
 let table = document.getElementById("board"),
 tableItems = table.getElementsByTagName("td")
 describe("Board Array Checks",function(){
-    it("Board length", function(){
+    it("Board length ", function(){
         expect(game.board.cells.length).to.be.equal(8)
         game.board.cells.forEach(element => {
             expect(element.length).to.be.equal(8)
         });
     })
-    it("Board Drawn",function(){
+    it("Board Drawn ",function(){
         expect(tableItems.length).to.be.equal(64)
     })
 })
 
 describe("In check tests",function(){
-    it("Not in check test",function(){//test with no piece movemments
+    this.afterEach(resetGame)
+    it("Not in check test ",function(){//test with no piece movemments
         expect(game.board.cells[0][4].piece.isInCheck(5,1)).to.be.equal(false)
         expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(false)
     })
+    it("In check from bishop test ",function(){
+        checkSquaresMovements(7,4,6,4)
+        checkSquaresMovements(2,5,3,5)
+        checkSquaresMovements(7,8,6,8)
+        checkSquaresMovements(1,6,5,2)
+        expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(true)
+    })
 })
 
+describe("Block Check Tests ",function(){
+    this.afterEach(resetGame)
+    it("Bishop block check from bishop ",function(){
+        checkSquaresMovements(7,4,6,4)
+        checkSquaresMovements(2,5,3,5)
+        checkSquaresMovements(7,8,6,8)
+        checkSquaresMovements(1,6,5,2)
+        expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(true)
+        checkSquaresMovements(8,3,7,4)
+        expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(false)
+    })
+    it("Pawn Block check from bishop ",function(){
+        checkSquaresMovements(7,4,6,4)
+        checkSquaresMovements(2,5,3,5)
+        checkSquaresMovements(7,8,6,8)
+        checkSquaresMovements(1,6,5,2)
+        expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(true)
+        checkSquaresMovements(7,3,6,3)
+        expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(false)
+    })
+    it("Knight Block check from Queen by capturing ",function(){
+        checkSquaresMovements(8,2,6,3)
+        checkSquaresMovements(2,4,4,4)
+        checkSquaresMovements(7,5,5,5)
+        checkSquaresMovements(1,4,3,4)
+        checkSquaresMovements(5,5,4,4)
+        checkSquaresMovements(3,4,4,4)
+        checkSquaresMovements(7,8,6,8)
+        checkSquaresMovements(4,4,5,5)
+        expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(true)
+        checkSquaresMovements(6,3,5,5)
+        expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(false)
+    })
+})
 describe("Movement checks",function(){
     this.afterEach(resetGame)//resets game between each it
     it("pawn movement 1 ",function(){
