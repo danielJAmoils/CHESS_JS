@@ -49,5 +49,17 @@ class King extends Piece {
             return false;
         }
     }
+    isInCheck() {
+        const oppositeColorPieces = this.getOtherColorPieces();
+        let checked = false;
+        for (let i = 0; i < oppositeColorPieces.length; i++) {
+            const element = oppositeColorPieces[i];
+            if (element.correctMovement(this.x, this.y)) {
+                checked = true;
+                break;
+            }
+        }
+        return checked;
+    }
 }
 //# sourceMappingURL=King.js.map

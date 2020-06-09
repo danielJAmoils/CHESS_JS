@@ -28,5 +28,19 @@ class Piece {
     correctMovement(newX, newY) {
         return true;
     }
+    getOtherColorPieces() {
+        const pieces = [];
+        for (let i = 0; i < 8; i++) { //gets all other color pieces
+            for (let j = 0; j < 8; j++) {
+                const pieceChecked = game.board.cells[i][j].piece;
+                if (pieceChecked) { //if piece exists
+                    if (pieceChecked.color !== this.color) {
+                        pieces.push(pieceChecked);
+                    }
+                }
+            }
+        }
+        return pieces;
+    }
 }
 //# sourceMappingURL=Piece.js.map

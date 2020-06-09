@@ -39,4 +39,18 @@ class Piece{
     correctMovement?(newX:number,newY:number):boolean{//dummy function to make pieces compatible with piece type
         return true
     }
+    getOtherColorPieces():Piece[]{//returns all pieces of opposite color
+        const pieces = []
+        for(let i = 0;i<8;i++){//gets all other color pieces
+            for(let j = 0;j<8;j++){
+                const pieceChecked = game.board.cells[i][j].piece
+                if(pieceChecked){//if piece exists
+                    if(pieceChecked.color !== this.color){
+                        pieces.push(pieceChecked)
+                    }
+                }
+            }
+        }
+        return pieces
+    }
 }

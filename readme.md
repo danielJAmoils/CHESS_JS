@@ -19,6 +19,9 @@ game class
                     need to add test
                 left side castling
             check and check rules
+                made isInCheck function
+                make rules for when in check and for moving into check
+                tests for isInCheck
             bugs-pawn with something too in frount?,rook moving backwards? knight blocked bishop when not supposed to down-left?
                 queen moving 2spaces too little.
             clean up code       
@@ -33,6 +36,7 @@ game class
             make chess board size responsive
             add js dock notations
             bundle js into one file
+            make getting pieces its own function which take a callback with what to do with the pieces
 
          
 
