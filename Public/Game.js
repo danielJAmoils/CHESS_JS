@@ -12,6 +12,7 @@ class Game {
     createPiece(type, color, x, y) {
         const piece = new type(color, x, y);
         this.addPieceToBoard(piece);
+        return piece;
     }
     addPieceToBoard(piece) {
         const cell = this.board.cells[piece.y - 1][piece.x - 1];
@@ -92,7 +93,7 @@ class Game {
         }
         this.createPiece(Queen, "white", 4, 8);
         //white queen
-        this.createPiece(King, "white", 5, 8);
+        this.whiteKing = this.createPiece(King, "white", 5, 8);
         //white king
         /**************************************/
         for (let i = 1; i <= 8; i++) {
@@ -113,7 +114,7 @@ class Game {
         }
         this.createPiece(Queen, "black", 4, 1);
         //black queen
-        this.createPiece(King, "black", 5, 1);
+        this.blackKing = this.createPiece(King, "black", 5, 1);
         //black king
         this.turn = turnEnum.white;
         //set game turn to white

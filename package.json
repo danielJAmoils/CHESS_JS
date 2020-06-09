@@ -8,7 +8,6 @@
     "start": "cd src && tsc && cd.. && cd Public && explorer index.html",
     "compileAndWatch": "cd src && tsc --watch",
     "compile": "cd src && tsc"
-
   },
   "repository": {
     "type": "git",

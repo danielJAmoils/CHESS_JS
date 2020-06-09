@@ -20,8 +20,8 @@ game class
                     need to add tests
                 left side castling
             check and check rules
-                made isInCheck function
-                make rules for when in check and for moving into check
+                king can not move into check king cannot move to where opposite pawn moves because there is no piece there yet
+                need to make sure that pieces can not move while king is in check
                 tests for isInCheck
             bugs-pawn with something too in frount?,rook moving backwards? knight blocked bishop when not supposed to down-left?
                 queen moving 2spaces too little.
@@ -31,7 +31,7 @@ game class
             make cell amount custimizable
             make peice unselect automatic if piece can not move
             add table items into an array so you dont have to recreate table in js every time you acsess it
-            connect an ai
+            connect an ai:https://byanofsky.com/2017/07/06/building-a-simple-chess-ai/
             click on piece twice to deselect
             refactor restart game function in main.js
             make chess board size responsive

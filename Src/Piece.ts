@@ -44,7 +44,7 @@ class Piece{
         for(let i = 0;i<8;i++){//gets all other color pieces
             for(let j = 0;j<8;j++){
                 const pieceChecked = game.board.cells[i][j].piece
-                if(pieceChecked){//if piece exists
+                if(pieceChecked && !(pieceChecked instanceof King)){//if piece exists
                     if(pieceChecked.color !== this.color){
                         pieces.push(pieceChecked)
                     }

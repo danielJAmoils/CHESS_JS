@@ -5,7 +5,11 @@ class King extends Piece{
         this.hasMoved = false
     }
     correctMovement(newX:number,newY:number){
-        if(Math.abs(this.x-newX) <= 1 && Math.abs(this.y-newY) <= 1 ){
+        let isChecked :boolean
+
+        isChecked = this.isInCheck(newX,newY)
+        
+        if(Math.abs(this.x-newX) <= 1 && Math.abs(this.y-newY) <= 1 && !isChecked){
             this.hasMoved = true
             return true
         }else if(this.x - 2 === newX&& this.y === newY && !this.hasMoved){
@@ -45,12 +49,12 @@ class King extends Piece{
             return false
         }
     }
-    isInCheck(){
-        const oppositeColorPieces = this.getOtherColorPieces()
+    isInCheck?(x:number,y:number){
+        const oppositeColorPieces = super.getOtherColorPieces()
         let checked = false
         for (let i = 0; i < oppositeColorPieces.length; i++) {
             const element = oppositeColorPieces[i];
-            if(element.correctMovement(this.x,this.y)){
+            if(element.correctMovement(x,y)){
                 checked = true
                 break
             }

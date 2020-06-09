@@ -14,8 +14,8 @@ describe("Board Array Checks",function(){
 
 describe("In check tests",function(){
     it("Not in check test",function(){//test with no piece movemments
-        expect(game.board.cells[0][4].piece.isInCheck()).to.be.equal(false)
-        expect(game.board.cells[7][4].piece.isInCheck()).to.be.equal(false)
+        expect(game.board.cells[0][4].piece.isInCheck(5,1)).to.be.equal(false)
+        expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(false)
     })
 })
 

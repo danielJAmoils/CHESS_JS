@@ -8,14 +8,17 @@ const turnEnum = {
 class Game{
     turn:number
     board:Board
+    whiteKing:King|undefined
+    blackKing:King|undefined
     constructor(){
         this.turn = turnEnum.stoped
         this.board = new Board(8,8)//can change board size
         this.startGame()
     }
-    createPiece(type: typeof Pawn,color:string,x:number,y:number){
+    createPiece(type: typeof King,color:string,x:number,y:number){
         const piece = new type(color,x,y)
         this.addPieceToBoard(piece)
+        return piece
     }
     addPieceToBoard(piece:Piece){
         const cell = this.board.cells[piece.y-1][piece.x-1]
@@ -99,7 +102,7 @@ class Game{
         }
         this.createPiece(Queen,"white",4,8)
         //white queen
-        this.createPiece(King,"white",5,8)
+        this.whiteKing = this.createPiece(King,"white",5,8)
         //white king
 
         /**************************************/
@@ -122,7 +125,7 @@ class Game{
         }
         this.createPiece(Queen,"black",4,1)
         //black queen
-        this.createPiece(King,"black",5,1)
+        this.blackKing = this.createPiece(King,"black",5,1)
         //black king
 
         this.turn = turnEnum.white
