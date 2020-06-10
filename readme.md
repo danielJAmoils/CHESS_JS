@@ -15,10 +15,9 @@ game class
             endings:victory/draw
             pawn to queen
             check and check rules
-                king can not move into check king cannot move to where opposite pawn moves because there is no piece there yet
-                need to make sure that pieces can not move while king is in check
                 tests for isInCheck
             tests
+            rewrite tests that dont work properly because pieces can not move in check
             clean up code       
 
         Possible additons:    

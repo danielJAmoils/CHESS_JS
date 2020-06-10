@@ -37,7 +37,7 @@ class Game{
         const targetCell = this.board.cells[targetY-1][targetX-1],
         currentCell = this.board.cells[currentY-1][currentX-1]
 
-        if(currentCell.piece.correctMovement(targetX,targetY)){//checks if movement is correct
+        if(currentCell.piece.stopsCheck(targetX,targetY)){//checks if movement is correct
             resetCellColor(currentX,currentY)
             targetCell.piece = currentCell.piece
             currentCell.piece = null
@@ -67,7 +67,7 @@ class Game{
         //
         //console.log(`checkSquaresMovements(${piece1.y},${piece1.x},${piece2.y},${piece2.x})`)
         //
-            if(piece1.correctMovement(piece2.x,piece2.y)){//checks if movement is correct
+            if(piece1.stopsCheck(piece2.x,piece2.y)){//checks if movement is correct
                 if(piece1.color == piece2.color){
                     //if you try to move piece to same color piece it will not move
                 }else{
@@ -130,5 +130,12 @@ class Game{
 
         this.turn = turnEnum.white
         //set game turn to white
+    }
+    getKing(){
+        if(turnEnum.white === this.turn){
+            return this.whiteKing
+        }else{
+            return this.blackKing
+        }
     }
 }

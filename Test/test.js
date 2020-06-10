@@ -14,7 +14,7 @@ describe("Board Array Checks",function(){
 
 describe("In check tests",function(){
     this.afterEach(resetGame)
-    it("Not in check test ",function(){//test with no piece movemments
+    it("Not in check test ",function(){//test with no piece movements
         expect(game.board.cells[0][4].piece.isInCheck(5,1)).to.be.equal(false)
         expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(false)
     })
@@ -105,7 +105,7 @@ describe("Movement checks",function(){
         checkSquaresMovements(1,6,4,3)
         checkSquaresMovements(4,7,1,4)
         checkSquaresMovements(4,3,7,6)
-        checkSquaresMovements(1,4,2,3)
+        checkSquaresMovements(1,4,2,3)//stops check moving this is good(need to rewrite test)
         checkSquaresMovements(3,5,4,5)
         checkSquaresMovements(2,3,3,4)
         checkSquaresMovements(7,6,6,7)
@@ -132,7 +132,7 @@ describe("Movement checks",function(){
         checkSquaresMovements(6,4,2,4)
         checkSquaresMovements(3,3,7,3)
         checkSquaresMovements(2,4,2,3)
-        checkSquaresMovements(7,3,2,3)// rook fails to caputre upward
+        checkSquaresMovements(7,3,2,3)
     })
     it("queen movement test 1 ",function(){
         checkSquaresMovements(7,4,6,4)
@@ -144,7 +144,7 @@ describe("Movement checks",function(){
         checkSquaresMovements(3,8,2,7)
         checkSquaresMovements(4,2,6,4)
         checkSquaresMovements(2,7,1,6)
-        checkSquaresMovements(6,4,7,5)
+        checkSquaresMovements(6,4,7,5)//this is good that it stops because you cant move in check(need to rewrite test)
         checkSquaresMovements(8,2,6,3)
         checkSquaresMovements(2,6,4,6)
         checkSquaresMovements(6,3,5,5)
@@ -156,7 +156,7 @@ describe("Movement checks",function(){
         checkSquaresMovements(7,3,6,3)
         checkSquaresMovements(5,6,7,6)
         checkSquaresMovements(6,3,5,3)
-        checkSquaresMovements(7,6,7,2)//fail
+        checkSquaresMovements(7,6,7,2)
     })
     it("castling test 1 ",function(){
         checkSquaresMovements(8,7,6,6)
@@ -206,7 +206,7 @@ describe("Movement checks",function(){
         checkSquaresMovements(7,2,5,2)
         checkSquaresMovements(4,1,5,2)
         checkSquaresMovements(6,1,5,2)
-        checkSquaresMovements(1,1,8,1)//rook fails to capture downward
+        checkSquaresMovements(1,1,8,1)
     })
     it("Multiple piece with multiple movements test 2 ",function(){
         checkSquaresMovements(7,3,5,3)
@@ -269,7 +269,7 @@ describe("Movement checks",function(){
         checkSquaresMovements(1,3,7,3)
         checkSquaresMovements(8,6,8,3)
         checkSquaresMovements(7,3,8,3)
-        //end game
+        //it should end the game here
     })
 })
 function getIndex(y,x){

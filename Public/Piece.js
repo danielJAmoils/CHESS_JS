@@ -43,5 +43,31 @@ class Piece {
         }
         return pieces;
     }
+    stopsCheck(newX, newY) {
+        const king = game.getKing(), isCorrectMove = this.correctMovement(newX, newY), oldX = this.x, oldY = this.y, targetCell = game.board.cells[newY - 1][newX - 1], currentCell = game.board.cells[oldX - 1][oldY - 1];
+        let isChecked = true, targetPiece;
+        if (king.isInCheck(king.x, king.y)) {
+            if (isCorrectMove) {
+                targetPiece = targetCell.piece;
+                targetCell.piece = this;
+                currentCell.piece = null;
+                isChecked = king.isInCheck(king.x, king.y);
+                currentCell.piece = this;
+                targetCell.piece = targetPiece;
+                if (isChecked) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+            else {
+                return isCorrectMove;
+            }
+        }
+        else {
+            return isCorrectMove;
+        }
+    }
 }
 //# sourceMappingURL=Piece.js.map
