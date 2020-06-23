@@ -54,7 +54,7 @@ class Piece{
         }
         return pieces
     }
-    stopsCheck(newX:number,newY:number){
+    stopsCheck(newX:number,newY:number){//check if in check and move stops check else just checks if move is correct
         const king = game.getKing(),
         isCorrectMove = this.correctMovement(newX,newY),
         oldX = this.x,
@@ -64,20 +64,32 @@ class Piece{
         let isChecked = true,
         targetPiece:Piece|null|undefined
         if(king.isInCheck(king.x,king.y)){
-            if(isCorrectMove){
+            if(isCorrectMove &&this != king){//if is in check and move correct
                 targetPiece = targetCell.piece
                 targetCell.piece = this
                 currentCell.piece = null
                 isChecked = king.isInCheck(king.x,king.y)
                 currentCell.piece = this
                 targetCell.piece = targetPiece
-                if(isChecked){
-                    return false
+                if(isChecked){//check if stops check
+                    return false//move doesent stop check
                 }else{
-                    return true
+                    return true//move stops check
                 }
-            }else{
-                return isCorrectMove
+            }else if(this == king){//king trying to move out of check
+                targetPiece = targetCell.piece
+                targetCell.piece = this
+                currentCell.piece = null
+                isChecked = king.isInCheck(newX,newY)//diffrince between this and condition above is here with which x and y is passed
+                currentCell.piece = this
+                targetCell.piece = targetPiece
+                if(isChecked){//check if stops check
+                    return false//move doesent stop check
+                }else{
+                    return true//move stops check
+                }
+            }else{//no check
+                return isCorrectMove//return regular
             }
         }else{
             return isCorrectMove
