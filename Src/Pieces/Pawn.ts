@@ -21,6 +21,9 @@ class Pawn extends Piece{
                 }
                 if(newX === this.x && newY === this.y-1){
                     //correct move
+                    if(newY === 1){//pawn to queen white
+                        game.board.cells[this.y - 1][this.x - 1].piece = new Queen(this.color,this.x,this.y)
+                    }
                     return true
                 }else{
                     //incorrect move
@@ -33,6 +36,9 @@ class Pawn extends Piece{
                 }
                 if(newX === this.x && newY === this.y+1){
                     //correct move
+                    if(newY === 8){//pawn to queen black
+                        game.board.cells[this.y - 1][this.x - 1].piece = new Queen(this.color,this.x,this.y)
+                    }
                     return true
                 }else{
                     //incorrect move
