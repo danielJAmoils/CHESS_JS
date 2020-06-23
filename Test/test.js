@@ -60,6 +60,14 @@ describe("Block Check Tests ",function(){
         checkSquaresMovements(6,3,5,5)
         expect(game.board.cells[7][4].piece.isInCheck(5,8)).to.be.equal(false)
     })
+    it("king move out of check test ",function(){
+        checkSquaresMovements(7,5,5,5)
+        checkSquaresMovements(2,4,3,4)
+        checkSquaresMovements(7,1,6,1)
+        checkSquaresMovements(2,6,3,6)
+        checkSquaresMovements(8,4,4,8)//in check
+        checkSquaresMovements(1,5,2,4)//should be able to move out of check
+    })
 })
 describe("Movement checks",function(){
     this.afterEach(resetGame)//resets game between each it
@@ -285,7 +293,77 @@ describe("Movement checks",function(){
         checkSquaresMovements(7,3,8,3)
         //it should end the game here
     })
+    it("Multiple piece with mutliple movements test 4 ",function(){
+        checkSquaresMovements(7,3,5,3)
+        checkSquaresMovements(1,7,3,6)
+        checkSquaresMovements(7,5,6,5)
+        checkSquaresMovements(2,5,4,5)
+        checkSquaresMovements(7,4,5,4)
+        checkSquaresMovements(4,5,5,4)
+        checkSquaresMovements(6,5,5,4)
+        checkSquaresMovements(1,6,5,2)
+        checkSquaresMovements(8,4,7,4)
+        checkSquaresMovements(5,2,7,4)
+        checkSquaresMovements(8,3,7,4)
+        checkSquaresMovements(1,2,3,3)
+        checkSquaresMovements(7,8,6,8)
+        checkSquaresMovements(1,4,2,5)
+        checkSquaresMovements(7,4,6,5)
+        checkSquaresMovements(3,3,5,4)
+        checkSquaresMovements(8,7,6,6)
+        checkSquaresMovements(5,4,7,3)
+        checkSquaresMovements(8,5,8,4)
+    })
 })
+
+describe("pawn to queen tests ",function(){
+    this.afterEach(resetGame)
+    it("pawn to queen test 1 ",function(){
+        checkSquaresMovements(7,4,5,4)
+        checkSquaresMovements(2,5,4,5)
+        checkSquaresMovements(7,6,6,6)
+        checkSquaresMovements(4,5,5,4)
+        checkSquaresMovements(8,5,7,6)
+        checkSquaresMovements(5,4,6,4)
+        checkSquaresMovements(8,4,7,4)
+        checkSquaresMovements(2,8,3,8)
+        checkSquaresMovements(7,4,4,1)
+        checkSquaresMovements(6,4,7,4)
+        checkSquaresMovements(7,3,6,3)
+        
+        clickSquares(7,4,8,4)//pawn to queen
+        expect(tableItems[getIndex(7,4)].innerText).to.be.equal("")
+        expect(tableItems[getIndex(8,4)].innerText).to.be.equal("♛")//specifically check if queen
+
+        checkSquaresMovements(4,1,4,8)
+        checkSquaresMovements(8,4,6,2)
+        checkSquaresMovements(6,6,5,6)
+        checkSquaresMovements(6,2,7,2)
+    })
+    it("pawn to queen test 2 ",function(){
+        checkSquaresMovements(7,4,6,4)
+        checkSquaresMovements(2,6,3,6)
+        checkSquaresMovements(6,4,5,4)
+        checkSquaresMovements(1,5,2,6)
+        checkSquaresMovements(7,7,6,7)
+        checkSquaresMovements(2,6,3,7)
+        checkSquaresMovements(7,1,6,1)
+        checkSquaresMovements(2,5,4,5)
+        checkSquaresMovements(5,4,4,5)
+        checkSquaresMovements(1,4,2,5)
+        checkSquaresMovements(4,5,3,5)
+        checkSquaresMovements(2,5,3,4)
+        checkSquaresMovements(3,5,2,5)
+        checkSquaresMovements(2,3,3,3)
+
+        clickSquares(2,5,1,5)//pawn to queen here
+        expect(tableItems[getIndex(2,5)].innerText).to.be.equal("")
+        expect(tableItems[getIndex(1,5)].innerText).to.be.equal("♕")//specifically test if queen
+
+    })
+})
+
+/*****************************Helper Functions**********************************/
 function getIndex(y,x){
     return ((8*(y-1))+x-1)
 }
