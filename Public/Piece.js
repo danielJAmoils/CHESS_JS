@@ -46,26 +46,21 @@ class Piece {
     stopsCheck(newX, newY) {
         const king = game.getKing(), isCorrectMove = this.correctMovement(newX, newY), oldX = this.x, oldY = this.y, targetCell = game.board.cells[newY - 1][newX - 1], currentCell = game.board.cells[oldX - 1][oldY - 1];
         let isChecked = true, targetPiece;
+        let checkedX, checkedY;
         if (king.isInCheck(king.x, king.y)) {
-            if (isCorrectMove && this != king) { //if is in check and move correct
-                targetPiece = targetCell.piece;
-                targetCell.piece = this;
-                currentCell.piece = null;
-                isChecked = king.isInCheck(king.x, king.y);
-                currentCell.piece = this;
-                targetCell.piece = targetPiece;
-                if (isChecked) { //check if stops check
-                    return false; //move doesent stop check
-                }
-                else {
-                    return true; //move stops check
-                }
+            if (this != king) { //checks weather king is moving
+                checkedX = king.x; //checks x and y of stationary king
+                checkedY = king.y;
             }
-            else if (this == king) { //king trying to move out of check
+            else {
+                checkedX = newX; //checks x and y of moving king
+                checkedY = newY;
+            }
+            if (isCorrectMove) { //if is in check and move correct
                 targetPiece = targetCell.piece;
                 targetCell.piece = this;
                 currentCell.piece = null;
-                isChecked = king.isInCheck(newX, newY); //diffrince between this and condition above is here with which x and y is passed
+                isChecked = king.isInCheck(checkedX, checkedY);
                 currentCell.piece = this;
                 targetCell.piece = targetPiece;
                 if (isChecked) { //check if stops check

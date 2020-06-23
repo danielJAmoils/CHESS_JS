@@ -63,24 +63,20 @@ class Piece{
         currentCell = game.board.cells[oldX-1][oldY-1]
         let isChecked = true,
         targetPiece:Piece|null|undefined
+        let checkedX:number,checkedY:number
         if(king.isInCheck(king.x,king.y)){
-            if(isCorrectMove &&this != king){//if is in check and move correct
+            if(this != king){//checks weather king is moving
+                checkedX = king.x//checks x and y of stationary king
+                checkedY = king.y
+            }else{
+                checkedX = newX//checks x and y of moving king
+                checkedY = newY
+            }
+            if(isCorrectMove){//if is in check and move correct
                 targetPiece = targetCell.piece
                 targetCell.piece = this
                 currentCell.piece = null
-                isChecked = king.isInCheck(king.x,king.y)
-                currentCell.piece = this
-                targetCell.piece = targetPiece
-                if(isChecked){//check if stops check
-                    return false//move doesent stop check
-                }else{
-                    return true//move stops check
-                }
-            }else if(this == king){//king trying to move out of check
-                targetPiece = targetCell.piece
-                targetCell.piece = this
-                currentCell.piece = null
-                isChecked = king.isInCheck(newX,newY)//diffrince between this and condition above is here with which x and y is passed
+                isChecked = king.isInCheck(checkedX,checkedY)
                 currentCell.piece = this
                 targetCell.piece = targetPiece
                 if(isChecked){//check if stops check
