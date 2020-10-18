@@ -4,7 +4,8 @@ class Knight extends Piece {
         super.drawPiece();
     }
     correctMovement(newX, newY) {
-        if ((Math.abs(this.x - newX) === 2 && Math.abs(this.y - newY) === 1) || (Math.abs(this.x - newX) === 1 && Math.abs(this.y - newY) === 2)) {
+        if ((Math.abs(this.x - newX) === 2 && Math.abs(this.y - newY) === 1) ||
+            (Math.abs(this.x - newX) === 1 && Math.abs(this.y - newY) === 2)) {
             return true;
         }
         else {

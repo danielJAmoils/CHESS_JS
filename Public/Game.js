@@ -28,7 +28,8 @@ class Game {
         //console.log(`checkSquaresMovements(${currentY},${currentX},${targetY},${targetX})`)
         //
         const targetCell = this.board.cells[targetY - 1][targetX - 1], currentCell = this.board.cells[currentY - 1][currentX - 1];
-        if (currentCell.piece.stopsCheck(targetX, targetY)) { //checks if movement is correct
+        if (currentCell.piece.stopsCheck(targetX, targetY)) {
+            //checks if movement is correct
             resetCellColor(currentX, currentY);
             targetCell.piece = currentCell.piece;
             currentCell.piece = null;
@@ -39,7 +40,8 @@ class Game {
             currentCell.status = statusEnum.Empty;
             targetCell.piece.drawPiece();
             this.erasePiece(currentX, currentY);
-            if (targetCell.piece.color == "white") { //changes turn
+            if (targetCell.piece.color == "white") {
+                //changes turn
                 this.turn = turnEnum.black;
             }
             else {
@@ -48,7 +50,7 @@ class Game {
         }
     }
     erasePiece(x, y) {
-        const table = document.getElementById("board"), tableItems = table.getElementsByTagName("td"), location = ((8 * (y - 1)) + x - 1), cell = tableItems.item(location);
+        const table = document.getElementById("board"), tableItems = table.getElementsByTagName("td"), location = 8 * (y - 1) + x - 1, cell = tableItems.item(location);
         cell.innerText = "";
     }
     checkCapture(piece1, piece2) {
@@ -56,7 +58,8 @@ class Game {
         //
         //console.log(`checkSquaresMovements(${piece1.y},${piece1.x},${piece2.y},${piece2.x})`)
         //
-        if (piece1.stopsCheck(piece2.x, piece2.y)) { //checks if movement is correct
+        if (piece1.stopsCheck(piece2.x, piece2.y)) {
+            //checks if movement is correct
             if (piece1.color == piece2.color) {
                 //if you try to move piece to same color piece it will not move
             }
@@ -64,7 +67,8 @@ class Game {
                 //when capturing
                 resetCellColor(piece1.x, piece1.y);
                 piece1.capture(piece2);
-                if (piece1.color == "white") { //changes turn
+                if (piece1.color == "white") {
+                    //changes turn
                     this.turn = turnEnum.black;
                 }
                 else {

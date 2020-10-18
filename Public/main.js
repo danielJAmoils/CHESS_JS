@@ -2,7 +2,8 @@ let game = new Game();
 function cellClicked(cell) {
     let pieceClicked = false, outsideX = 0, outsideY = 0;
     const x = cell.getAttribute("data-x"), y = cell.getAttribute("data-y");
-    for (let i = 0; i < 8; i++) { //checks if any cell has been clicked and if it has sets pieceClicked to true and gives x,y of clicked cell
+    for (let i = 0; i < 8; i++) {
+        //checks if any cell has been clicked and if it has sets pieceClicked to true and gives x,y of clicked cell
         for (let j = 0; j < 8; j++) {
             if (game.board.cells[i][j].clicked) {
                 outsideY = i + 1;
@@ -29,7 +30,10 @@ function cellClicked(cell) {
         const cellX = parseInt(x) - 1;
         //if piece in cell
         //checks if you clicked the right color piece
-        if ((game.board.cells[cellY][cellX].piece.color == "white" && game.turn == 1) || (game.board.cells[cellY][cellX].piece.color == "black" && game.turn == 2)) {
+        if ((game.board.cells[cellY][cellX].piece.color == "white" &&
+            game.turn == 1) ||
+            (game.board.cells[cellY][cellX].piece.color == "black" &&
+                game.turn == 2)) {
             game.board.cells[cellY][cellX].clicked = true;
             cell.style.backgroundColor = "blue";
         }
@@ -59,11 +63,12 @@ function resetCellColor(x, y) {
             color = "rgb(221, 215, 215)";
         }
     }
-    const table = document.getElementById("board"), tableItems = table.getElementsByTagName("td"), location = ((8 * (y - 1)) + x - 1), cell = tableItems.item(location);
+    const table = document.getElementById("board"), tableItems = table.getElementsByTagName("td"), location = 8 * (y - 1) + x - 1, cell = tableItems.item(location);
     cell.style.backgroundColor = color;
 }
 function unselectPiece() {
-    for (let i = 0; i < 8; i++) { //checks if any cell has been clicked and if it has sets pieceClicked to true and gives x,y of clicked cell
+    for (let i = 0; i < 8; i++) {
+        //checks if any cell has been clicked and if it has sets pieceClicked to true and gives x,y of clicked cell
         for (let j = 0; j < 8; j++) {
             if (game.board.cells[i][j].clicked) {
                 game.board.cells[i][j].clicked = false;
@@ -73,6 +78,7 @@ function unselectPiece() {
     }
 }
 function restart() {
+    //reloads page does not save anything
     window.location.reload();
 }
 //# sourceMappingURL=main.js.map

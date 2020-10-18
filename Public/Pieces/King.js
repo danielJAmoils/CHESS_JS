@@ -7,13 +7,16 @@ class King extends Piece {
     correctMovement(newX, newY) {
         let isChecked;
         isChecked = this.isInCheck(newX, newY);
-        if (Math.abs(this.x - newX) <= 1 && Math.abs(this.y - newY) <= 1 && !isChecked) {
+        if (Math.abs(this.x - newX) <= 1 &&
+            Math.abs(this.y - newY) <= 1 &&
+            !isChecked) {
             this.hasMoved = true;
             return true;
         }
         else if (this.x - 2 === newX && this.y === newY && !this.hasMoved) {
             //castiling left
-            if (game.board.cells[this.y - 1][this.x - 2].piece || game.board.cells[this.y - 1][this.x - 4].piece) {
+            if (game.board.cells[this.y - 1][this.x - 2].piece ||
+                game.board.cells[this.y - 1][this.x - 4].piece) {
                 //piece blocking
                 return false;
             }
@@ -30,7 +33,10 @@ class King extends Piece {
                 return false;
             }
         }
-        else if (this.x + 2 === newX && this.y === newY && game.board.cells[newY - 1][newX].piece instanceof Rook && !this.hasMoved) {
+        else if (this.x + 2 === newX &&
+            this.y === newY &&
+            game.board.cells[newY - 1][newX].piece instanceof Rook &&
+            !this.hasMoved) {
             //castiling right
             if (game.board.cells[this.y - 1][this.x].piece) {
                 //piece blocking

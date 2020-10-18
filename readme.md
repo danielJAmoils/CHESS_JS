@@ -3,9 +3,8 @@ game link:file:///C:/Users/danie/OneDrive/Documents/Chess_JS/Public/index.html
 test link:file:///C:/Users/danie/OneDrive/Documents/Chess_JS/Test/test.html
 
 game class
-    board-creates board
-    piece-isCaptured,capturing
-
+board-creates board
+piece-isCaptured,capturing
 
     Todo
         MinimuuM:
@@ -18,9 +17,10 @@ game class
                 tests for isInCheck
             tests
             rewrite tests that dont work properly because pieces can not move in check
-            clean up code       
+            clean up code
+            king can not move two spaces in front of pawn
 
-        Possible additons:    
+        Possible additons:
             make cell amount custimizable
             make peice unselect automatic if piece can not move
             add table items into an array so you dont have to recreate table in js every time you acsess it
@@ -31,7 +31,3 @@ game class
             add js dock notations
             make getting pieces its own function which take a callback with what to do with the pieces
             make bishop and piece movement checks there own functions so they do not have to be repeated
-
-         
-
-   
