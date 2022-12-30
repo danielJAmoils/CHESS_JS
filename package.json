@@ -22,6 +22,6 @@
   "homepage": "https://github.com/danielJAmoils/CHESS_JS#readme",
   "dependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.1.2"
+    "mocha": "^10.2.0"
   }
 }
